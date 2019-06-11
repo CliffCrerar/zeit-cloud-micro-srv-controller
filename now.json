@@ -1,0 +1,10 @@
+{
+    "version": 2,
+    "name": "my-express-project",
+    "alias": [ "ex-online-server-01.gq" ],
+    "builds": [
+        { "src": "www/**/*", "use": "@now/static" },
+        { "src": "api/**/*.js", "use": "@now/node" }
+    ],
+    "routes": [ { "src": "/", "dest": "www/index.html" } ]
+}
