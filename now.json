@@ -1,7 +1,6 @@
 {
     "version": 2,
-    "name": "my-express-project",
-    "alias": [ "ex-online-server-01.gq" ],
+    "alias": [ "srv.ex-online-server-01.gq.c1i44.now.sh" ],
     "builds": [
         { "src": "www/**/*", "use": "@now/static" },
         { "src": "api/**/*.js", "use": "@now/node" }
