@@ -2,7 +2,7 @@
     "version": 2,
     "name": "ex-online-server-one",
     "alias": [
-        "srv.ex-online-server-01.gq.c1i44.now.sh"
+        "ex-online-server-one"
     ],
     "builds": [ {
             "src": "www/**/*",
@@ -14,7 +14,15 @@
         }
     ],
     "routes": [ {
-        "src": "/",
-        "dest": "www/index.html"
-    } ]
+            "src": "/",
+            "dest": "www/index.html"
+        },
+        {
+            "src": "/snippet",
+            "dest": "./api/sql-snippet.api"
+        }
+    ],
+    "env":{
+        "NODE_PATH":"./"
+    }
 }

@@ -1,0 +1,41 @@
+Arguments: 
+  /Users/cliffordcrerar/Library/Caches/co.zeit.fun/runtimes/nodejs8.10/bin/node /Users/cliffordcrerar/Library/Caches/co.zeit.now/dev/builders/yarn --prefer-offline --ignore-engines --cwd /Users/cliffordcrerar/letsplay/_zeit-services/ex-micro-server-01/api
+
+PATH: 
+  /Users/cliffordcrerar/Library/Caches/co.zeit.now/dev/builders:/Users/cliffordcrerar/Library/Caches/co.zeit.fun/runtimes/nodejs8.10/bin:/usr/local/opt/icu4c/bin:/usr/local/opt/icu4c/bin:/Users/cliffordcrerar/.google-cloud-sdk/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/share/dotnet:~/.dotnet/tools:/Library/Frameworks/Mono.framework/Versions/Current/Commands:/Applications/Xamarin Workbooks.app/Contents/SharedSupport/path-bin:/Users/cliffordcrerar/homebrew/bin:/usr/local/git/bin:/usr/local/bin/node:/usr/local/bin/npm:/Users/cliffordcrerar/Library/Python/2.7/bin:/Users/cliffordcrerar/.rar:/Applications/Visual Studio Code.app/Contents/Resources/app/bin:/Applications/Blisk.app/Contents/MacOS
+
+Yarn version: 
+  1.15.2
+
+Node version: 
+  8.10.0
+
+Platform: 
+  darwin x64
+
+Trace: 
+  Invariant Violation: There should only be one folder in a package cache (got  in /Users/cliffordcrerar/Library/Caches/Yarn/v4/npm-@material-ui-icons-3.0.2-d67a6dd1ec8312d3a88ec97944a63daeef24fe10/node_modules/@material-ui)
+      at invariant (/Users/cliffordcrerar/Library/Caches/co.zeit.now/dev/builders/yarn:1868:15)
+      at /Users/cliffordcrerar/Library/Caches/co.zeit.now/dev/builders/yarn:61742:11
+      at Generator.next (<anonymous>)
+      at step (/Users/cliffordcrerar/Library/Caches/co.zeit.now/dev/builders/yarn:310:30)
+      at /Users/cliffordcrerar/Library/Caches/co.zeit.now/dev/builders/yarn:321:13
+      at <anonymous>
+
+npm manifest: 
+  {
+    "dependencies": {
+      "express": "^4.16.4",
+      "helmet": "^3.18.0",
+      "moment": "^2.24.0"
+    },
+    "scripts":{
+      "start": "now dev --port=5500 process.env.NODE_PATH='./'"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile

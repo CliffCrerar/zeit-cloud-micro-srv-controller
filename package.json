@@ -1,7 +1,29 @@
 {
-  "dependencies": {
+
+  "name": "ex-micro-server-01",
+  "description": "**Live Demo**: https://express.now-examples.now.sh/",
+  "version": "0.3.0",
+  "main": "now.json",
+    "scripts": {
+    "start": "now dev --port 8080"
+  },
+      "dependencies": {
     "express": "^4.16.4",
     "helmet": "^3.18.0",
     "moment": "^2.24.0"
-  }
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CliffCrerar/zeit-cloud-micro-srv-controller.git"
+  },
+  "keywords": [
+    "microserve"
+  ],
+  "author": "Cliff Crerar",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/CliffCrerar/zeit-cloud-micro-srv-controller/issues"
+  },
+  "homepage": "https://github.com/CliffCrerar/zeit-cloud-micro-srv-controller#readme",
 }
