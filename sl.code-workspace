@@ -19,8 +19,8 @@
 			"path": "."
 		},
 		{
-			"name": "static-assets",
-			"path": "assets"
+			"name": "static-assets-img",
+			"path": "assets-img"
 		},
 		{
 			"path": "api"
@@ -28,6 +28,10 @@
 		{
 			"path": "www"
 		},
+		{
+			"name": "static-assets-files",
+			"path": "assets-files"
+		}
 	],
 	"settings": {
 		"files.exclude": {
@@ -83,12 +87,8 @@
 		"workbench.editor.highlightModifiedTabs": true,
 		"editor.wordWrap": "bounded",
 		"mdx-preview.preview.useVscodeMarkdownStyles": true,
-		"markdown-preview-enhanced.enableLinkify": false,
-		"markdown-preview-enhanced.enableWikiLinkSyntax": true,
-		"markdown-preview-enhanced.singlePreview": false,
 		"markdown.preview.scrollPreviewWithEditor": false,
 		"markdown.preview.scrollEditorWithPreview": false,
-		"markdown.preview.scrollPreviewWithEditorSelection": false,
 		"cSpell.enabled": false,
 		"typescript.format.enable": false,
 		"typescript.surveys.enabled": false,
