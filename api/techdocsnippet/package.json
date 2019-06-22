@@ -1,0 +1,21 @@
+{
+    "name": "sql-snipet-fecth-lamda",
+    "version": "1.0.0",
+    "description": "Just get it donw cliff",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "dependencies": {
+        "express": "^4.17.1",
+        "helmet": "^3.18.0",
+        "moment": "^2.24.0"
+    },
+    "keywords": [
+        "get",
+        "code",
+        "snippet"
+    ],
+    "author": "Cliff Crerar",
+    "license": "MIT"
+}

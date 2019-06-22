@@ -23,14 +23,14 @@
 			"path": "assets-img"
 		},
 		{
+			"name": "static-assets-files",
+			"path": "assets-files"
+		},
+		{
 			"path": "api"
 		},
 		{
 			"path": "www"
-		},
-		{
-			"name": "static-assets-files",
-			"path": "assets-files"
 		}
 	],
 	"settings": {
@@ -93,6 +93,9 @@
 		"typescript.format.enable": false,
 		"typescript.surveys.enabled": false,
 		"typescript.suggestionActions.enabled": false,
-		"typescript.validate.enable": false
+		"typescript.validate.enable": false,
+		"editor.tabSize": 4,
+		"editor.insertSpaces": false,
+		"editor.autoIndent": true
 	}
 }

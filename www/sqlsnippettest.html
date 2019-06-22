@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>SQL Snippet test</title>
+</head>
+
+<body>
+    <h1>Test for SQL snippet</h1>
+    <button onclick="">Fetch from server</button>
+    <br>
+    <a href="/api/techdocsnippet" download="Northwind.sql"> click me now bitch</a>
+    <div id="displaySnittet">
+        <a href="/api/techdocsnippet" download="Northwind.sql">
+            <button onclick="">Fetch from server</button>
+        </a>
+    </div>
+    <!-- <script>
+        var aElem = document.createElement('a');
+        aElem.download = 'Northwind.sql';
+        document.addEventListener('click', async function(ev) {
+            console.log('ev: ', ev);
+            let response = await fetch('/api/techdocsnippet');
+            let sqlFile = await response.text();
+            console.log('sqlfile: ', sqlFile);
+            aElem.target = sqlFile;
+            aElem.click();
+            // .then(function(response) {
+            //     console.log('response: ', response);
+            //     return response;
+            // })
+            // .then(function(data) {
+            //     console.log('show data')
+            //     console.log(data);
+
+            //     //document.querySelector('.js-date').textContent = date;
+            // });
+        })
+    </script> -->
+</body>
+
+</html>

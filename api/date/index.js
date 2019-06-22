@@ -2,20 +2,16 @@ const express = require( 'express' );
 const helmet = require( 'helmet' );
 const moment = require( 'moment' );
 
-const app = express();
+const app = express( );
 
-app.use( helmet() );
-
-function unpackRequest( r ) {
-  console.log( 'r: ', r );
-
-}
+app.use( helmet( ) );
 
 app.get( '*', ( req, res ) => {
-  unpackRequest( req )
-  res.set( 'Content-Type', 'text/html' );
-  const currentTime = moment().format( 'MMMM Do YYYY, h:mm:ss a' );
-  res.status( 200 ).send( currentTime );
+    console.log( 'received a date request from client' );
+
+    res.set( 'Content-Type', 'text/html' );
+    const currentTime = moment( ).format( 'MMMM Do YYYY, h:mm:ss a' );
+    res.status( 200 ).send( currentTime );
 } );
 
 module.exports = app;

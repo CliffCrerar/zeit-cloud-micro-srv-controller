@@ -1,9 +1,20 @@
 {
-  "version": 2,
-  "name": "my-express-project",
-  "builds": [
-    { "src": "www/**/*", "use": "@now/static" },
-    { "src": "api/**/*.js", "use": "@now/node" }
-  ],
-  "routes": [{ "src": "/", "dest": "www/index.html" }]
+    "version": 2,
+    "name": "my-express-project",
+    "env": {
+        "NODE_PATH": "./:./utils:./scripts:./api:./assets-files:./assets-img"
+    },
+    "builds": [ {
+            "src": "www/**/*",
+            "use": "@now/static"
+        },
+        {
+            "src": "api/**/*.js",
+            "use": "@now/node"
+        }
+    ],
+    "routes": [ {
+        "src": "/",
+        "dest": "www/index.html"
+    } ]
 }
