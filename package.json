@@ -1,7 +1,24 @@
 {
-  "dependencies": {
-    "express": "^4.16.4",
-    "helmet": "^3.18.0",
-    "moment": "^2.24.0"
-  }
+    "name": "ziet-serverless-apis",
+    "version": "0.0.0",
+    "description": "API container",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start": "now dev --port 8080"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/CliffCrerar/zeit-cloud-micro-srv-controller.git"
+    },
+    "keywords": [
+        "serverless",
+        "api"
+    ],
+    "author": "Cliff Crerar",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/CliffCrerar/zeit-cloud-micro-srv-controller/issues"
+    },
+    "homepage": "https://github.com/CliffCrerar/zeit-cloud-micro-srv-controller#readme"
 }

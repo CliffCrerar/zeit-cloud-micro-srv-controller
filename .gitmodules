@@ -1,0 +1,3 @@
+[submodule "api/date/assets"]
+	path = api/date/assets
+	url = https://github.com/CliffCrerar/zeit-optipng-with-now.git

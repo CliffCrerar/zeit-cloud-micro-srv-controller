@@ -1,0 +1,98 @@
+{
+	"folders": [
+		// {
+		//  "path": "_1_"
+		// },
+		// {
+		// 2 "path": "../_zeit-services"
+		// },
+		// {
+		//  "path": "../DOCSET/learn-transact-SQL-fundamentals"
+		// },
+		// {
+		//  "path": "../ziet-assets"
+		// },
+		// {
+		//  "path": "/Users/cliffordcrerar/letsplay/NativefyWorkshop"
+		// },
+		{
+			"path": "."
+		},
+		{
+			"name": "static-assets",
+			"path": "assets"
+		},
+		{
+			"path": "api"
+		},
+		{
+			"path": "www"
+		},
+	],
+	"settings": {
+		"files.exclude": {
+			"**/.git": true,
+			"**/.svn": true,
+			"**/.hg": true,
+			"**/CVS": true,
+			"**/.DS_Store": true,
+			"api": true,
+			"www": true,
+			"assets": true
+		},
+		"cSpell.enabledLanguageIds": [
+			"asciidoc",
+			"c",
+			"cpp",
+			"csharp",
+			"css",
+			"git-commit",
+			"go",
+			"handlebars",
+			"html",
+			"jade",
+			"java",
+			"javascript",
+			"javascriptreact",
+			"json",
+			"jsonc",
+			"latex",
+			"less",
+			"markdown",
+			"php",
+			"plaintext",
+			"python",
+			"pug",
+			"restructuredtext",
+			"rust",
+			"scala",
+			"scss",
+			"text",
+			"typescript",
+			"typescriptreact",
+			"yaml",
+			"yml"
+		],
+		"editor.fontFamily": "Fira Code,Menlo, Monaco, 'Courier New', monospace",
+		"editor.fontLigatures": true,
+		"editor.fontSize": 14,
+		"editor.fontWeight": "500",
+		"workbench.fontAliasing": "default",
+		"javascript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBraces": false,
+		"workbench.editor.tabSizing": "shrink",
+		"workbench.editor.highlightModifiedTabs": true,
+		"editor.wordWrap": "bounded",
+		"mdx-preview.preview.useVscodeMarkdownStyles": true,
+		"markdown-preview-enhanced.enableLinkify": false,
+		"markdown-preview-enhanced.enableWikiLinkSyntax": true,
+		"markdown-preview-enhanced.singlePreview": false,
+		"markdown.preview.scrollPreviewWithEditor": false,
+		"markdown.preview.scrollEditorWithPreview": false,
+		"markdown.preview.scrollPreviewWithEditorSelection": false,
+		"cSpell.enabled": false,
+		"typescript.format.enable": false,
+		"typescript.surveys.enabled": false,
+		"typescript.suggestionActions.enabled": false,
+		"typescript.validate.enable": false
+	}
+}
