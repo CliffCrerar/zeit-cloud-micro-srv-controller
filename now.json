@@ -1,28 +1,9 @@
 {
-    "version": 2,
-    "name": "ex-online-server-one",
-    "alias": [
-        "ex-online-server-one"
-    ],
-    "builds": [ {
-            "src": "www/**/*",
-            "use": "@now/static"
-        },
-        {
-            "src": "api/**/*.js",
-            "use": "@now/node"
-        }
-    ],
-    "routes": [ {
-            "src": "/",
-            "dest": "www/index.html"
-        },
-        {
-            "src": "/snippet",
-            "dest": "./api/sql-snippet.api"
-        }
-    ],
-    "env":{
-        "NODE_PATH":"./"
-    }
+  "version": 2,
+  "name": "my-express-project",
+  "builds": [
+    { "src": "www/**/*", "use": "@now/static" },
+    { "src": "api/**/*.js", "use": "@now/node" }
+  ],
+  "routes": [{ "src": "/", "dest": "www/index.html" }]
 }
