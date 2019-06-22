@@ -1,20 +1,5 @@
 {
 	"folders": [
-		// {
-		//  "path": "_1_"
-		// },
-		// {
-		// 2 "path": "../_zeit-services"
-		// },
-		// {
-		//  "path": "../DOCSET/learn-transact-SQL-fundamentals"
-		// },
-		// {
-		//  "path": "../ziet-assets"
-		// },
-		// {
-		//  "path": "/Users/cliffordcrerar/letsplay/NativefyWorkshop"
-		// },
 		{
 			"path": "."
 		},
@@ -31,6 +16,9 @@
 		},
 		{
 			"path": "www"
+		},
+		{
+			"path": "/Users/cliffordcrerar/letsplay/_3_SQL-DOC-project/learn-transact-SQL-fundamentals"
 		}
 	],
 	"settings": {
