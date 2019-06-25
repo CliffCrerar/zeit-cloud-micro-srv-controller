@@ -12,17 +12,11 @@
 
 ## TODO:
 
-Experimient with serverless user authentication according to this instruction:
+Experiment with serverless user authentication according to this instruction:
 
-​	[Twitter dreamify example](https://zeit.co/blog/serverless-express-js-lambdas-with-now-2)	
-
+​[Twitter dreamify example](https://zeit.co/blog/serverless-express-js-lambdas-with-now-2)	
 
 
 #### Notes:
 
 For now this app is only experiment, plans for the future it to do all kinds of weird and magical things while being serverless.
-
-
-
-
-
