@@ -1,6 +1,7 @@
 {
     "version": 2,
-    "name": "my-express-project",
+    "name": "express-micro-serverless",
+    "alias": "ia-serverless-apis",
     "env": {
         "NODE_PATH": "./:./utils:./scripts:./api:./assets-files:./assets-img"
     },

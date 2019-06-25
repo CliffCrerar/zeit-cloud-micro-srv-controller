@@ -8,5 +8,4 @@
 				document.querySelector( '.js-date' ).textContent = date;
 			} );
 	}
-
 )()

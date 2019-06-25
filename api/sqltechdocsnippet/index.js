@@ -1,7 +1,5 @@
 const express = require( 'express' );
 const helmet = require( 'helmet' );
-const moment = require( 'moment' );
-const streamsqlfile = require( '../../assets-files/northwindsnippet' );
 const fs = require( 'fs' );
 const path = require( 'path' );
 
@@ -13,11 +11,11 @@ app.get( '*', ( req, res ) => {
 	res.set( 'Content-Type', 'application/sql' );
 	fs.readFile( path.join( __dirname, 'Northwind.sql' ), ( err, data ) => {
 		if ( err ) {
-			console.error( 'ERROR NOOOOO:', err );
+			console.error( '-< ERROR:', err );
 			res.send( err );
 			res.end();
 		} else {
-			console.log( 'lekke' );
+			console.log( '-> SQL Snippet Served' );
 			res.send( data );
 			res.end();
 		}
