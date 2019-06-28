@@ -1,6 +1,10 @@
 #api
 node_modules
 assets/img
+assets/files
+_assets
+_assets/files
+_assets/img
 **/.DS_Store
 **/**/.DS_Store
 **/**/**/.DS_Store

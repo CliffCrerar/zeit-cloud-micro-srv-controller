@@ -1,3 +1,7 @@
-[submodule "api/date/assets"]
-	path = api/date/assets
+[submodule "zeit-optipng-with-now"]
+	path = _assets/img
 	url = https://github.com/CliffCrerar/zeit-optipng-with-now.git
+
+[submodule "now-cdn"]
+	path = _assets/files
+	url = https://github.com/CliffCrerar/now-cdn.git
