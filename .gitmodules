@@ -1,7 +1,7 @@
 [submodule "zeit-optipng-with-now"]
-	path = _assets/img
-	url = https://github.com/CliffCrerar/zeit-optipng-with-now.git
+	path = assets/img
+	url = https://github.com/CliffCrerar/cdn-png-repo.git
 
 [submodule "now-cdn"]
-	path = _assets/files
+	path = assets/files
 	url = https://github.com/CliffCrerar/now-cdn.git
