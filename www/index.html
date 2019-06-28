@@ -4,18 +4,40 @@
 <head>
     <title>Serverless with now</title>
     <link href="/www/style.css" rel="stylesheet">
+    <style>
+        .header {
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        .header .key {
+            text-align: left;
+            font-weight: 700;
+        }
+        
+        .header .value {
+            text-align: right;
+        }
+    </style>
 </head>
 
 <body>
     <h2>
-        Serverless API controll app
+        Serverless API Control Room
     </h2>
     <p class="date js-date">Loading date...</p>
-    <p>if Date is showing then API is running</p>
+    <div>
+        <h3>Request:</h3>
+        <div id="reqHeaders" class="request"></div>
+    </div>
+    <div>
+        <h3>Response:</h3>
+        <div id="resStatus" class="response"></div>
+    </div>
     <a href="www/sqlsnippettest.html">
         <button>Code Snippet test Page</button></a>
-    <script src="www/js/date.js">
-    </script>
+    <script src="www/js/browser-request.js"></script>
+    <script src="www/js/server-info.js"></script>
 </body>
 
 </html>

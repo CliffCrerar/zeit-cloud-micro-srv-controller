@@ -1,2 +1,17 @@
 {
+	"cSpell.words": [
+		"API's",
+		"Northwind",
+		"frameguard",
+		"getutil",
+		"iframe",
+		"learnsql",
+		"nortwindsnippet",
+		"now",
+		"optipng",
+		"techdocsnippet",
+		"testfolder",
+		"zeit"
+	],
+	"eslint.enable": true
 }

@@ -1,0 +1,25 @@
+{
+  "name": "ia-now-cdn",
+  "version": "1.0.0",
+  "description": "web assets for reuse",
+  "main": "now.json",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CliffCrerar/now-cdn.git"
+  },
+  "keywords": [
+    "cdn",
+    "web-assets",
+    "assets",
+    "reuse"
+  ],
+  "author": "Cliff Crerar",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/CliffCrerar/now-cdn/issues"
+  },
+  "homepage": "https://github.com/CliffCrerar/now-cdn#readme"
+}

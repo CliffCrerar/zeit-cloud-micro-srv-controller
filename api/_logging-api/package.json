@@ -1,0 +1,16 @@
+{
+    "name": "logging-api",
+    "version": "1.0.0",
+    "description": "shares code for logging",
+    "main": "index.js",
+    "scripts": {
+        "test": "log"
+    },
+    "dependencies": {
+        "express": "^4.16.4",
+        "helmet": "^3.18.0",
+        "moment": "^2.24.0"
+    },
+    "author": "Cliff Crerar",
+    "license": "MIT"
+}

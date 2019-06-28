@@ -11,15 +11,27 @@
         },
         {
             "src": "assets/files/**/*",
-            "use": "@now/static"
+            "use": "@now/static",
+            "headers": {
+                "Access-Control-Allow-Origin": "*"
+            }
         },
         {
             "src": "api/**/*.js",
             "use": "@now/node"
+        },
+        {
+            "src": "assets/img/**/*.png",
+            "use": "@now/optipng"
         }
     ],
     "routes": [{
-        "src": "/",
-        "dest": "www"
-    }]
+            "src": "/",
+            "dest": "www"
+        },
+        {
+            "src": "/static?",
+            "dest": "api/static"
+        }
+    ]
 }

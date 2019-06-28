@@ -1,3 +1,7 @@
 README.md
 api/node_modules
 api/yarn.lock
+api/z_experiments
+package-lock.json
+.vscode
+assets/img/assets/files

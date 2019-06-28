@@ -1,0 +1,16 @@
+{
+    "version": 2,
+    "alias": "now-cdn",
+    "name": "now-static-cdn",
+    "env": {
+        "NODE_PATH": "./"
+    },
+    "builds": [{
+        "src": "./**/*.*",
+        "use": "@now/static"
+    }],
+    "routes": [{
+        "src": "/",
+        "dest": "post"
+    }]
+}
