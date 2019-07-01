@@ -1,7 +1,3 @@
-CREATE DATABASE Northwind;
-GO
-USE Northwind;
-GO
 /*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
 /*!40103 SET TIME_ZONE='+00:00' */;
 /*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
@@ -9,13 +5,13 @@ GO
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO,MSSQL' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
-/*!40101 SET @saved_cs_client = @@character_set_client */;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE categories (
-CategoryID int NOT NULL,
-CategoryName varchar(15) NOT NULL,
-Description text,
-PRIMARY KEY (CategoryID)
+  CategoryID int  NOT NULL,
+  CategoryName varchar(15) NOT NULL,
+  Description text,
+  PRIMARY KEY (CategoryID)
 );
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -29,28 +25,28 @@ INSERT INTO categories VALUES (6,'Meat/Poultry','Prepared meats');
 INSERT INTO categories VALUES (7,'Produce','Dried fruit and bean curd');
 INSERT INTO categories VALUES (8,'Seafood','Seaweed and fish');
 /*!40000 ALTER TABLE categories ENABLE KEYS */;
-/*!40101 SET @saved_cs_client = @@character_set_client */;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE customers (
-CustomerID varchar(5) NOT NULL,
-CompanyName varchar(40) NOT NULL,
-ContactName varchar(30) DEFAULT NULL,
-ContactTitle varchar(30) DEFAULT NULL,
-Address varchar(60) DEFAULT NULL,
-City varchar(15) DEFAULT NULL,
-Region varchar(15) DEFAULT NULL,
-PostalCode varchar(10) DEFAULT NULL,
-Country varchar(15) DEFAULT NULL,
-Phone varchar(24) DEFAULT NULL,
-Fax varchar(24) DEFAULT NULL,
-PRIMARY KEY (CustomerID)
+  CustomerID varchar(5) NOT NULL,
+  CompanyName varchar(40) NOT NULL,
+  ContactName varchar(30) DEFAULT NULL,
+  ContactTitle varchar(30) DEFAULT NULL,
+  Address varchar(60) DEFAULT NULL,
+  City varchar(15) DEFAULT NULL,
+  Region varchar(15) DEFAULT NULL,
+  PostalCode varchar(10) DEFAULT NULL,
+  Country varchar(15) DEFAULT NULL,
+  Phone varchar(24) DEFAULT NULL,
+  Fax varchar(24) DEFAULT NULL,
+  PRIMARY KEY (CustomerID)
 );
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 /*!40000 ALTER TABLE customers DISABLE KEYS */;
 INSERT INTO customers VALUES ('ALFKI','Alfreds Futterkiste','Maria Anders','Sales Representative','Obere Str. 57','Berlin',NULL,'12209','Germany','030-0074321','030-0076545');
 INSERT INTO customers VALUES ('ANATR','Ana Trujillo Emparedados y helados','Ana Trujillo','Owner','Avda. de la Constituci','M',NULL,'050216','Mexico','(5) 555-4729','(5) 555-3745');
-INSERT INTO customers VALUES ('ANTON','Antonio Moreno Taquer','Antonio Moreno','Owner','Mataderos 2312','M',NULL,'05023','Mexico','(5) 555-3932',NULL);
+INSERT INTO customers VALUES ('ANTON','Antonio Moreno Taquer','Antonio Moreno','Owner','Mataderos  2312','M',NULL,'05023','Mexico','(5) 555-3932',NULL);
 INSERT INTO customers VALUES ('BLAUS','Blauer See Delikatessen','Hanna Moos','Sales Representative','Forsterstr. 57','Mannheim',NULL,'68306','Germany','0621-08460','0621-08924');
 INSERT INTO customers VALUES ('BLONP','Blondel p','Fr','Marketing Manager','24, place Kl','Strasbourg',NULL,'67000','France','88.60.15.31','88.60.15.32');
 INSERT INTO customers VALUES ('BONAP','Bon app''','Laurence Lebihan','Owner','12, rue des Bouchers','Marseille',NULL,'13008','France','91.24.45.40','91.24.45.41');
@@ -60,7 +56,7 @@ INSERT INTO customers VALUES ('CACTU','Cactus Comidas para llevar','Patricio Sim
 INSERT INTO customers VALUES ('CENTC','Centro comercial Moctezuma','Francisco Chang','Marketing Manager','Sierras de Granada 9993','M',NULL,'05022','Mexico','(5) 555-3392','(5) 555-7293');
 INSERT INTO customers VALUES ('CHOPS','Chop-suey Chinese','Yang Wang','Owner','Hauptstr. 29','Bern',NULL,'3012','Switzerland','0452-076545',NULL);
 INSERT INTO customers VALUES ('COMMI','Com','Pedro Afonso','Sales Associate','Av. dos Lus','S','SP','05432-043','Brazil','(11) 555-7647',NULL);
-INSERT INTO customers VALUES ('CONSH','Consolidated Holdings','Elizabeth Brown','Sales Representative','Berkeley Gardens 12 Brewery ','London',NULL,'WX1 6LT','UK','(171) 555-2282','(171) 555-9199');
+INSERT INTO customers VALUES ('CONSH','Consolidated Holdings','Elizabeth Brown','Sales Representative','Berkeley Gardens\r\n12  Brewery ','London',NULL,'WX1 6LT','UK','(171) 555-2282','(171) 555-9199');
 INSERT INTO customers VALUES ('DRACD','Drachenblut Delikatessen','Sven Ottlieb','Order Administrator','Walserweg 21','Aachen',NULL,'52066','Germany','0241-039123','0241-059428');
 INSERT INTO customers VALUES ('DUMON','Du monde entier','Janine Labrune','Owner','67, rue des Cinquante Otages','Nantes',NULL,'44000','France','40.67.88.88','40.67.89.89');
 INSERT INTO customers VALUES ('EASTC','Eastern Connection','Ann Devon','Sales Agent','35 King George','London',NULL,'WX3 6FW','UK','(171) 555-0297','(171) 555-3373');
@@ -80,16 +76,16 @@ INSERT INTO customers VALUES ('GREAL','Great Lakes Food Market','Howard Snyder',
 INSERT INTO customers VALUES ('GROSR','GROSELLA-Restaurante','Manuel Pereira','Owner','5','Caracas','DF','1081','Venezuela','(2) 283-2951','(2) 283-3397');
 INSERT INTO customers VALUES ('HANAR','Hanari Carnes','Mario Pontes','Accounting Manager','Rua do Pa','Rio de Janeiro','RJ','05454-876','Brazil','(21) 555-0091','(21) 555-8765');
 INSERT INTO customers VALUES ('HILAA','HILARI','Carlos Hern','Sales Representative','Carrera 22 con Ave. Carlos Soublette #8-35','San Crist','T','5022','Venezuela','(5) 555-1340','(5) 555-1948');
-INSERT INTO customers VALUES ('HUNGC','Hungry Coyote Import Store','Yoshi Latimer','Sales Representative','City Center Plaza 516 Main St.','Elgin','OR','97827','USA','(503) 555-6874','(503) 555-2376');
+INSERT INTO customers VALUES ('HUNGC','Hungry Coyote Import Store','Yoshi Latimer','Sales Representative','City Center Plaza\r\n516 Main St.','Elgin','OR','97827','USA','(503) 555-6874','(503) 555-2376');
 INSERT INTO customers VALUES ('HUNGO','Hungry Owl All-Night Grocers','Patricia McKenna','Sales Associate','8 Johnstown Road','Cork','Co. Cork',NULL,'Ireland','2967 542','2967 3333');
-INSERT INTO customers VALUES ('ISLAT','Island Trading','Helen Bennett','Marketing Manager','Garden House Crowther Way','Cowes','Isle of Wight','PO31 7PJ','UK','(198) 555-8888',NULL);
+INSERT INTO customers VALUES ('ISLAT','Island Trading','Helen Bennett','Marketing Manager','Garden House\r\nCrowther Way','Cowes','Isle of Wight','PO31 7PJ','UK','(198) 555-8888',NULL);
 INSERT INTO customers VALUES ('KOENE','K','Philip Cramer','Sales Associate','Maubelstr. 90','Brandenburg',NULL,'14776','Germany','0555-09876',NULL);
 INSERT INTO customers VALUES ('LACOR','La corne d''abondance','Daniel Tonini','Sales Representative','67, avenue de l''Europe','Versailles',NULL,'78000','France','30.59.84.10','30.59.85.11');
 INSERT INTO customers VALUES ('LAMAI','La maison d''Asie','Annette Roulet','Sales Manager','1 rue Alsace-Lorraine','Toulouse',NULL,'31000','France','61.77.61.10','61.77.61.11');
 INSERT INTO customers VALUES ('LAUGB','Laughing Bacchus Wine Cellars','Yoshi Tannamuri','Marketing Assistant','1900 Oak St.','Vancouver','BC','V3F 2K1','Canada','(604) 555-3392','(604) 555-7293');
 INSERT INTO customers VALUES ('LAZYK','Lazy K Kountry Store','John Steel','Marketing Manager','12 Orchestra Terrace','Walla Walla','WA','99362','USA','(509) 555-7969','(509) 555-6221');
 INSERT INTO customers VALUES ('LEHMS','Lehmanns Marktstand','Renate Messner','Sales Representative','Magazinweg 7','Frankfurt a.M. ',NULL,'60528','Germany','069-0245984','069-0245874');
-INSERT INTO customers VALUES ('LETSS','Let''s Stop N Shop','Jaime Yorres','Owner','87 Polk St. Suite 5','San Francisco','CA','94117','USA','(415) 555-5938',NULL);
+INSERT INTO customers VALUES ('LETSS','Let''s Stop N Shop','Jaime Yorres','Owner','87 Polk St.\r\nSuite 5','San Francisco','CA','94117','USA','(415) 555-5938',NULL);
 INSERT INTO customers VALUES ('LILAS','LILA-Supermercado','Carlos Gonz','Accounting Manager','Carrera 52 con Ave. Bol','Barquisimeto','Lara','3508','Venezuela','(9) 331-6954','(9) 331-7256');
 INSERT INTO customers VALUES ('LINOD','LINO-Delicateses','Felipe Izquierdo','Owner','Ave. 5 de Mayo Porlamar','I. de Margarita','Nueva Esparta','4980','Venezuela','(8) 34-56-12','(8) 34-93-93');
 INSERT INTO customers VALUES ('LONEP','Lonesome Pine Restaurant','Fran Wilson','Sales Manager','89 Chiaroscuro Rd.','Portland','OR','97219','USA','(503) 555-9573','(503) 555-9646');
@@ -97,8 +93,8 @@ INSERT INTO customers VALUES ('MAGAA','Magazzini Alimentari Riuniti','Giovanni R
 INSERT INTO customers VALUES ('MAISD','Maison Dewey','Catherine Dewey','Sales Agent','Rue Joseph-Bens 532','Bruxelles',NULL,'B-1180','Belgium','(02) 201 24 67','(02) 201 24 68');
 INSERT INTO customers VALUES ('MEREP','M','Jean Fresni','Marketing Assistant','43 rue St. Laurent','Montr','Qu','H1J 1C3','Canada','(514) 555-8054','(514) 555-8055');
 INSERT INTO customers VALUES ('MORGK','Morgenstern Gesundkost','Alexander Feuer','Marketing Assistant','Heerstr. 22','Leipzig',NULL,'04179','Germany','0342-023176',NULL);
-INSERT INTO customers VALUES ('NORTS','North/South','Simon Crowther','Sales Associate','South House 300 Queensbridge','London',NULL,'SW7 1RZ','UK','(171) 555-7733','(171) 555-2530');
-INSERT INTO customers VALUES ('OCEAN','Oc','Yvonne Moncada','Sales Agent','Ing. Gustavo Moncada 8585 Piso 20-A','Buenos Aires',NULL,'1010','Argentina','(1) 135-5333','(1) 135-5535');
+INSERT INTO customers VALUES ('NORTS','North/South','Simon Crowther','Sales Associate','South House\r\n300 Queensbridge','London',NULL,'SW7 1RZ','UK','(171) 555-7733','(171) 555-2530');
+INSERT INTO customers VALUES ('OCEAN','Oc','Yvonne Moncada','Sales Agent','Ing. Gustavo Moncada 8585\r\nPiso 20-A','Buenos Aires',NULL,'1010','Argentina','(1) 135-5333','(1) 135-5535');
 INSERT INTO customers VALUES ('OLDWO','Old World Delicatessen','Rene Phillips','Sales Representative','2743 Bering St.','Anchorage','AK','99508','USA','(907) 555-7584','(907) 555-2880');
 INSERT INTO customers VALUES ('OTTIK','Ottilies K','Henriette Pfalzheim','Owner','Mehrheimerstr. 369','K',NULL,'50739','Germany','0221-0644327','0221-0765721');
 INSERT INTO customers VALUES ('PARIS','Paris sp','Marie Bertrand','Owner','265, boulevard Charonne','Paris',NULL,'75012','France','(1) 42.34.22.66','(1) 42.34.22.77');
@@ -121,7 +117,7 @@ INSERT INTO customers VALUES ('SIMOB','Simons bistro','Jytte Petersen','Owner','
 INSERT INTO customers VALUES ('SPECD','Sp','Dominique Perrier','Marketing Manager','25, rue Lauriston','Paris',NULL,'75016','France','(1) 47.55.60.10','(1) 47.55.60.20');
 INSERT INTO customers VALUES ('SPLIR','Split Rail Beer & Ale','Art Braunschweiger','Sales Manager','P.O. Box 555','Lander','WY','82520','USA','(307) 555-4680','(307) 555-6525');
 INSERT INTO customers VALUES ('SUPRD','Supr','Pascale Cartrain','Accounting Manager','Boulevard Tirou, 255','Charleroi',NULL,'B-6000','Belgium','(071) 23 67 22 20','(071) 23 67 22 21');
-INSERT INTO customers VALUES ('THEBI','The Big Cheese','Liz Nixon','Marketing Manager','89 Jefferson Way Suite 2','Portland','OR','97201','USA','(503) 555-3612',NULL);
+INSERT INTO customers VALUES ('THEBI','The Big Cheese','Liz Nixon','Marketing Manager','89 Jefferson Way\r\nSuite 2','Portland','OR','97201','USA','(503) 555-3612',NULL);
 INSERT INTO customers VALUES ('THECR','The Cracker Box','Liu Wong','Marketing Assistant','55 Grizzly Peak Rd.','Butte','MT','59801','USA','(406) 555-5834','(406) 555-8083');
 INSERT INTO customers VALUES ('TOMSP','Toms Spezialit','Karin Josephs','Marketing Manager','Luisenstr. 48','M',NULL,'44087','Germany','0251-031259','0251-035695');
 INSERT INTO customers VALUES ('TORTU','Tortuga Restaurante','Miguel Angel Paolino','Owner','Avda. Azteca 123','M',NULL,'05033','Mexico','(5) 555-2933',NULL);
@@ -133,53 +129,53 @@ INSERT INTO customers VALUES ('VINET','Vins et alcools Chevalier','Paul Henriot'
 INSERT INTO customers VALUES ('WANDK','Die Wandernde Kuh','Rita M','Sales Representative','Adenauerallee 900','Stuttgart',NULL,'70563','Germany','0711-020361','0711-035428');
 INSERT INTO customers VALUES ('WARTH','Wartian Herkku','Pirkko Koskitalo','Accounting Manager','Torikatu 38','Oulu',NULL,'90110','Finland','981-443655','981-443655');
 INSERT INTO customers VALUES ('WELLI','Wellington Importadora','Paula Parente','Sales Manager','Rua do Mercado, 12','Resende','SP','08737-363','Brazil','(14) 555-8122',NULL);
-INSERT INTO customers VALUES ('WHITC','White Clover Markets','Karl Jablonski','Owner','305 - 14th Ave. S. Suite 3B','Seattle','WA','98128','USA','(206) 555-4112','(206) 555-4115');
+INSERT INTO customers VALUES ('WHITC','White Clover Markets','Karl Jablonski','Owner','305 - 14th Ave. S.\r\nSuite 3B','Seattle','WA','98128','USA','(206) 555-4112','(206) 555-4115');
 INSERT INTO customers VALUES ('WILMK','Wilman Kala','Matti Karttunen','Owner/Marketing Assistant','Keskuskatu 45','Helsinki',NULL,'21240','Finland','90-224 8858','90-224 8858');
-INSERT INTO customers VALUES ('WOLZA','Wolski Zajazd','Zbyszek Piestrzeniewicz','Owner','ul. Filtrowa 68','Warszawa',NULL,'01-012','Poland','(26) 642-7012','(26) 642-7012');
+INSERT INTO customers VALUES ('WOLZA','Wolski  Zajazd','Zbyszek Piestrzeniewicz','Owner','ul. Filtrowa 68','Warszawa',NULL,'01-012','Poland','(26) 642-7012','(26) 642-7012');
 /*!40000 ALTER TABLE customers ENABLE KEYS */;
-/*!40101 SET @saved_cs_client = @@character_set_client */;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE employees (
-EmployeeID int NOT NULL,
-LastName varchar(20) NOT NULL,
-FirstName varchar(10) NOT NULL,
-Title varchar(30) DEFAULT NULL,
-TitleOfCourtesy varchar(25) DEFAULT NULL,
-BirthDate datetime DEFAULT NULL,
-HireDate datetime DEFAULT NULL,
-Address varchar(60) DEFAULT NULL,
-City varchar(15) DEFAULT NULL,
-Region varchar(15) DEFAULT NULL,
-PostalCode varchar(10) DEFAULT NULL,
-Country varchar(15) DEFAULT NULL,
-HomePhone varchar(24) DEFAULT NULL,
-Extension varchar(4) DEFAULT NULL,
-Photo varchar(255) DEFAULT NULL,
-Notes text,
-ReportsTo int DEFAULT NULL,
-PRIMARY KEY (EmployeeID)
+  EmployeeID int  NOT NULL,
+  LastName varchar(20) NOT NULL,
+  FirstName varchar(10) NOT NULL,
+  Title varchar(30) DEFAULT NULL,
+  TitleOfCourtesy varchar(25) DEFAULT NULL,
+  BirthDate datetime DEFAULT NULL,
+  HireDate datetime DEFAULT NULL,
+  Address varchar(60) DEFAULT NULL,
+  City varchar(15) DEFAULT NULL,
+  Region varchar(15) DEFAULT NULL,
+  PostalCode varchar(10) DEFAULT NULL,
+  Country varchar(15) DEFAULT NULL,
+  HomePhone varchar(24) DEFAULT NULL,
+  Extension varchar(4) DEFAULT NULL,
+  Photo varchar(255) DEFAULT NULL,
+  Notes text,
+  ReportsTo int DEFAULT NULL,
+  PRIMARY KEY (EmployeeID)
 );
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 /*!40000 ALTER TABLE employees DISABLE KEYS */;
-INSERT INTO employees VALUES (1,'Davolio','Nancy','Sales Representative','Ms.','1968-12-08 00:00:00','1992-05-01 00:00:00','507 - 20th Ave. E. Apt. 2A','Seattle','WA','98122','USA','(206) 555-9857','5467','EmpID1.bmp','Education includes a BA in psychology from Colorado State University. She also completed "The Art of the Cold Call." Nancy is a member of Toastmasters International.',2);
+INSERT INTO employees VALUES (1,'Davolio','Nancy','Sales Representative','Ms.','1968-12-08 00:00:00','1992-05-01 00:00:00','507 - 20th Ave. E.\r\nApt. 2A','Seattle','WA','98122','USA','(206) 555-9857','5467','EmpID1.bmp','Education includes a BA in psychology from Colorado State University.  She also completed \"The Art of the Cold Call.\"  Nancy is a member of Toastmasters International.',2);
 INSERT INTO employees (EmployeeID, LastName, FirstName, Title, TitleOfCourtesy, BirthDate) VALUES (2,'Gates','Bill','CEO','Mr.', '1955-10-28');
-INSERT INTO employees VALUES (3,'Leverling','Janet','Sales Representative','Ms.','1963-08-30 00:00:00','1992-04-01 00:00:00','722 Moss Bay Blvd.','Kirkland','WA','98033','USA','(206) 555-3412','3355','EmpID3.bmp','Janet has a BS degree in chemistry from Boston College). She has also completed a certificate program in food retailing management. Janet was hired as a sales associate and was promoted to sales representative.',2);
+INSERT INTO employees VALUES (3,'Leverling','Janet','Sales Representative','Ms.','1963-08-30 00:00:00','1992-04-01 00:00:00','722 Moss Bay Blvd.','Kirkland','WA','98033','USA','(206) 555-3412','3355','EmpID3.bmp','Janet has a BS degree in chemistry from Boston College).  She has also completed a certificate program in food retailing management.  Janet was hired as a sales associate and was promoted to sales representative.',2);
 INSERT INTO employees VALUES (4,'Peacock','Margaret','Sales Representative','Mrs.','1958-09-09 00:00:00','1993-05-03 00:00:00','4110 Old Redmond Rd.','Redmond','WA','98052','USA','(206) 555-8122','5176','EmpID4.bmp','Margaret holds a BA in English literature from Concordia College and an MA from the American Institute of Culinary Arts. She was temporarily assigned to the London office before returning to her permanent post in Seattle.',2);
-INSERT INTO employees VALUES (5,'Buchanan','Steven','Sales Manager','Mr.','1955-03-01 00:00:00','1993-10-17 00:00:00','14 Garrett Hill','London',NULL,'SW1 8JR','UK','(71) 555-4848','3453','EmpID5.bmp','Steven Buchanan graduated from St. Andrews University, Scotland, with a BSC degree. Upon joining the company as a sales representative, he spent 6 months in an orientation program at the Seattle office and then returned to his permanent post in London, where he was promoted to sales manager. Mr. Buchanan has completed the courses "Successful Telemarketing" and "International Sales Management." He is fluent in French.',2);
-INSERT INTO employees VALUES (7,'King','Robert','Sales Representative','Mr.','1960-05-29 00:00:00','1994-01-02 00:00:00','Edgeham Hollow Winchester Way','London',NULL,'RG1 9SP','UK','(71) 555-5598','465','EmpID7.bmp','Robert King served in the Peace Corps and traveled extensively before completing his degree in English at the University of Michigan and then joining the company. After completing a course entitled "Selling in Europe," he was transferred to the London office.',5);
-INSERT INTO employees VALUES (8,'Callahan','Laura','Inside Sales Coordinator','Ms.','1958-01-09 00:00:00','1994-03-05 00:00:00','4726 - 11th Ave. N.E.','Seattle','WA','98105','USA','(206) 555-1189','2344','EmpID8.bmp','Laura received a BA in psychology from the University of Washington. She has also completed a course in business French. She reads and writes French.',2);
-INSERT INTO employees VALUES (9,'Dodsworth','Anne','Sales Representative','Ms.','1969-07-02 00:00:00','1994-11-15 00:00:00','7 Houndstooth Rd.','London',NULL,'WG2 7LT','UK','(71) 555-4444','452','EmpID9.bmp','Anne has a BA degree in English from St. Lawrence College. She is fluent in French and German.',5);
+INSERT INTO employees VALUES (5,'Buchanan','Steven','Sales Manager','Mr.','1955-03-01 00:00:00','1993-10-17 00:00:00','14 Garrett Hill','London',NULL,'SW1 8JR','UK','(71) 555-4848','3453','EmpID5.bmp','Steven Buchanan graduated from St. Andrews University, Scotland, with a BSC degree.  Upon joining the company as a sales representative, he spent 6 months in an orientation program at the Seattle office and then returned to his permanent post in London, where he was promoted to sales manager.  Mr. Buchanan has completed the courses \"Successful Telemarketing\" and \"International Sales Management.\"  He is fluent in French.',2);
+INSERT INTO employees VALUES (7,'King','Robert','Sales Representative','Mr.','1960-05-29 00:00:00','1994-01-02 00:00:00','Edgeham Hollow\r\nWinchester Way','London',NULL,'RG1 9SP','UK','(71) 555-5598','465','EmpID7.bmp','Robert King served in the Peace Corps and traveled extensively before completing his degree in English at the University of Michigan and then joining the company.  After completing a course entitled \"Selling in Europe,\" he was transferred to the London office.',5);
+INSERT INTO employees VALUES (8,'Callahan','Laura','Inside Sales Coordinator','Ms.','1958-01-09 00:00:00','1994-03-05 00:00:00','4726 - 11th Ave. N.E.','Seattle','WA','98105','USA','(206) 555-1189','2344','EmpID8.bmp','Laura received a BA in psychology from the University of Washington.  She has also completed a course in business French.  She reads and writes French.',2);
+INSERT INTO employees VALUES (9,'Dodsworth','Anne','Sales Representative','Ms.','1969-07-02 00:00:00','1994-11-15 00:00:00','7 Houndstooth Rd.','London',NULL,'WG2 7LT','UK','(71) 555-4444','452','EmpID9.bmp','Anne has a BA degree in English from St. Lawrence College.  She is fluent in French and German.',5);
 /*!40000 ALTER TABLE employees ENABLE KEYS */;
-/*!40101 SET @saved_cs_client = @@character_set_client */;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE order_details (
-OrderID int NOT NULL,
-ProductID int NOT NULL,
-UnitPrice decimal(19,4) NOT NULL DEFAULT '0.0000',
-Quantity int NOT NULL DEFAULT '1',
-Discount float NOT NULL DEFAULT '0',
-PRIMARY KEY (OrderID,ProductID)
+  OrderID int  NOT NULL,
+  ProductID int  NOT NULL,
+  UnitPrice decimal(19,4) NOT NULL DEFAULT '0.0000',
+  Quantity int NOT NULL DEFAULT '1',
+  Discount float NOT NULL DEFAULT '0',
+  PRIMARY KEY (OrderID,ProductID)
 );
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -2340,24 +2336,24 @@ INSERT INTO order_details VALUES (11077,73,'15.0000',2,0.01);
 INSERT INTO order_details VALUES (11077,75,'7.7500',4,0);
 INSERT INTO order_details VALUES (11077,77,'13.0000',2,0);
 /*!40000 ALTER TABLE order_details ENABLE KEYS */;
-/*!40101 SET @saved_cs_client = @@character_set_client */;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE orders (
-OrderID int NOT NULL,
-CustomerID varchar(5) DEFAULT NULL,
-EmployeeID int DEFAULT NULL,
-OrderDate datetime DEFAULT NULL,
-RequiredDate datetime DEFAULT NULL,
-ShippedDate datetime DEFAULT NULL,
-ShipVia int DEFAULT NULL,
-Freight decimal(19,4) DEFAULT '0.0000',
-ShipName varchar(40) DEFAULT NULL,
-ShipAddress varchar(60) DEFAULT NULL,
-ShipCity varchar(15) DEFAULT NULL,
-ShipRegion varchar(15) DEFAULT NULL,
-ShipPostalCode varchar(10) DEFAULT NULL,
-ShipCountry varchar(15) DEFAULT NULL,
-PRIMARY KEY (OrderID)
+  OrderID int  NOT NULL,
+  CustomerID varchar(5) DEFAULT NULL,
+  EmployeeID int  DEFAULT NULL,
+  OrderDate datetime DEFAULT NULL,
+  RequiredDate datetime DEFAULT NULL,
+  ShippedDate datetime DEFAULT NULL,
+  ShipVia int DEFAULT NULL,
+  Freight decimal(19,4) DEFAULT '0.0000',
+  ShipName varchar(40) DEFAULT NULL,
+  ShipAddress varchar(60) DEFAULT NULL,
+  ShipCity varchar(15) DEFAULT NULL,
+  ShipRegion varchar(15) DEFAULT NULL,
+  ShipPostalCode varchar(10) DEFAULT NULL,
+  ShipCountry varchar(15) DEFAULT NULL,
+  PRIMARY KEY (OrderID)
 );
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -2424,18 +2420,18 @@ INSERT INTO orders VALUES (10306,'ROMEY',1,'1996-09-16 00:00:00','1996-10-14 00:
 INSERT INTO orders VALUES (10307,'LONEP',2,'1996-09-17 00:00:00','1996-10-15 00:00:00','1996-09-25 00:00:00',2,'0.5600','Lonesome Pine Restaurant','89 Chiaroscuro Rd.','Portland','OR','97219','USA');
 INSERT INTO orders VALUES (10308,'ANATR',7,'1996-09-18 00:00:00','1996-10-16 00:00:00','1996-09-24 00:00:00',3,'1.6100','Ana Trujillo Emparedados y helados','Avda. de la Constituci','M',NULL,'05021','Mexico');
 INSERT INTO orders VALUES (10309,'HUNGO',3,'1996-09-19 00:00:00','1996-10-17 00:00:00','1996-10-23 00:00:00',1,'47.3000','Hungry Owl All-Night Grocers','8 Johnstown Road','Cork','Co. Cork',NULL,'Ireland');
-INSERT INTO orders VALUES (10310,'THEBI',8,'1996-09-20 00:00:00','1996-10-18 00:00:00','1996-09-27 00:00:00',2,'17.5200','The Big Cheese','89 Jefferson Way Suite 2','Portland','OR','97201','USA');
+INSERT INTO orders VALUES (10310,'THEBI',8,'1996-09-20 00:00:00','1996-10-18 00:00:00','1996-09-27 00:00:00',2,'17.5200','The Big Cheese','89 Jefferson Way\r\nSuite 2','Portland','OR','97201','USA');
 INSERT INTO orders VALUES (10311,'DUMON',1,'1996-09-20 00:00:00','1996-10-04 00:00:00','1996-09-26 00:00:00',3,'24.6900','Du monde entier','67, rue des Cinquante Otages','Nantes',NULL,'44000','France');
 INSERT INTO orders VALUES (10312,'WANDK',2,'1996-09-23 00:00:00','1996-10-21 00:00:00','1996-10-03 00:00:00',2,'40.2600','Die Wandernde Kuh','Adenauerallee 900','Stuttgart',NULL,'70563','Germany');
 INSERT INTO orders VALUES (10313,'QUICK',2,'1996-09-24 00:00:00','1996-10-22 00:00:00','1996-10-04 00:00:00',2,'1.9600','QUICK-Stop','Taucherstra','Cunewalde',NULL,'01307','Germany');
 INSERT INTO orders VALUES (10314,'RATTC',1,'1996-09-25 00:00:00','1996-10-23 00:00:00','1996-10-04 00:00:00',2,'74.1600','Rattlesnake Canyon Grocery','2817 Milton Dr.','Albuquerque','NM','87110','USA');
-INSERT INTO orders VALUES (10315,'ISLAT',4,'1996-09-26 00:00:00','1996-10-24 00:00:00','1996-10-03 00:00:00',2,'41.7600','Island Trading','Garden House Crowther Way','Cowes','Isle of Wight','PO31 7PJ','UK');
+INSERT INTO orders VALUES (10315,'ISLAT',4,'1996-09-26 00:00:00','1996-10-24 00:00:00','1996-10-03 00:00:00',2,'41.7600','Island Trading','Garden House\r\nCrowther Way','Cowes','Isle of Wight','PO31 7PJ','UK');
 INSERT INTO orders VALUES (10316,'RATTC',1,'1996-09-27 00:00:00','1996-10-25 00:00:00','1996-10-08 00:00:00',3,'150.1500','Rattlesnake Canyon Grocery','2817 Milton Dr.','Albuquerque','NM','87110','USA');
 INSERT INTO orders VALUES (10317,'LONEP',6,'1996-09-30 00:00:00','1996-10-28 00:00:00','1996-10-10 00:00:00',1,'12.6900','Lonesome Pine Restaurant','89 Chiaroscuro Rd.','Portland','OR','97219','USA');
-INSERT INTO orders VALUES (10318,'ISLAT',8,'1996-10-01 00:00:00','1996-10-29 00:00:00','1996-10-04 00:00:00',2,'4.7300','Island Trading','Garden House Crowther Way','Cowes','Isle of Wight','PO31 7PJ','UK');
+INSERT INTO orders VALUES (10318,'ISLAT',8,'1996-10-01 00:00:00','1996-10-29 00:00:00','1996-10-04 00:00:00',2,'4.7300','Island Trading','Garden House\r\nCrowther Way','Cowes','Isle of Wight','PO31 7PJ','UK');
 INSERT INTO orders VALUES (10319,'TORTU',7,'1996-10-02 00:00:00','1996-10-30 00:00:00','1996-10-11 00:00:00',3,'64.5000','Tortuga Restaurante','Avda. Azteca 123','M',NULL,'05033','Mexico');
 INSERT INTO orders VALUES (10320,'WARTH',5,'1996-10-03 00:00:00','1996-10-17 00:00:00','1996-10-18 00:00:00',3,'34.5700','Wartian Herkku','Torikatu 38','Oulu',NULL,'90110','Finland');
-INSERT INTO orders VALUES (10321,'ISLAT',3,'1996-10-03 00:00:00','1996-10-31 00:00:00','1996-10-11 00:00:00',2,'3.4300','Island Trading','Garden House Crowther Way','Cowes','Isle of Wight','PO31 7PJ','UK');
+INSERT INTO orders VALUES (10321,'ISLAT',3,'1996-10-03 00:00:00','1996-10-31 00:00:00','1996-10-11 00:00:00',2,'3.4300','Island Trading','Garden House\r\nCrowther Way','Cowes','Isle of Wight','PO31 7PJ','UK');
 INSERT INTO orders VALUES (10322,'PERIC',7,'1996-10-04 00:00:00','1996-11-01 00:00:00','1996-10-23 00:00:00',3,'0.4000','Pericles Comidas cl','Calle Dr. Jorge Cash 321','M',NULL,'05033','Mexico');
 INSERT INTO orders VALUES (10323,'KOENE',4,'1996-10-07 00:00:00','1996-11-04 00:00:00','1996-10-14 00:00:00',1,'4.8800','K','Maubelstr. 90','Brandenburg',NULL,'14776','Germany');
 INSERT INTO orders VALUES (10324,'SAVEA',9,'1996-10-08 00:00:00','1996-11-05 00:00:00','1996-10-10 00:00:00',1,'214.2700','Save-a-lot Markets','187 Suffolk Ln.','Boise','ID','83720','USA');
@@ -2469,7 +2465,7 @@ INSERT INTO orders VALUES (10351,'ERNSH',1,'1996-11-11 00:00:00','1996-12-09 00:
 INSERT INTO orders VALUES (10352,'FURIB',3,'1996-11-12 00:00:00','1996-11-26 00:00:00','1996-11-18 00:00:00',3,'1.3000','Furia Bacalhau e Frutos do Mar','Jardim das rosas n. 32','Lisboa',NULL,'1675','Portugal');
 INSERT INTO orders VALUES (10353,'PICCO',7,'1996-11-13 00:00:00','1996-12-11 00:00:00','1996-11-25 00:00:00',3,'360.6300','Piccolo und mehr','Geislweg 14','Salzburg',NULL,'5020','Austria');
 INSERT INTO orders VALUES (10354,'PERIC',8,'1996-11-14 00:00:00','1996-12-12 00:00:00','1996-11-20 00:00:00',3,'53.8000','Pericles Comidas cl','Calle Dr. Jorge Cash 321','M',NULL,'05033','Mexico');
-INSERT INTO orders VALUES (10355,'AROUT',6,'1996-11-15 00:00:00','1996-12-13 00:00:00','1996-11-20 00:00:00',1,'41.9500','Around the Horn','Brook Farm Stratford St. Mary','Colchester','Essex','CO7 6JX','UK');
+INSERT INTO orders VALUES (10355,'AROUT',6,'1996-11-15 00:00:00','1996-12-13 00:00:00','1996-11-20 00:00:00',1,'41.9500','Around the Horn','Brook Farm\r\nStratford St. Mary','Colchester','Essex','CO7 6JX','UK');
 INSERT INTO orders VALUES (10356,'WANDK',6,'1996-11-18 00:00:00','1996-12-16 00:00:00','1996-11-27 00:00:00',2,'36.7100','Die Wandernde Kuh','Adenauerallee 900','Stuttgart',NULL,'70563','Germany');
 INSERT INTO orders VALUES (10357,'LILAS',1,'1996-11-19 00:00:00','1996-12-17 00:00:00','1996-12-02 00:00:00',3,'34.8800','LILA-Supermercado','Carrera 52 con Ave. Bol','Barquisimeto','Lara','3508','Venezuela');
 INSERT INTO orders VALUES (10358,'LAMAI',5,'1996-11-20 00:00:00','1996-12-18 00:00:00','1996-11-27 00:00:00',1,'19.6400','La maison d''Asie','1 rue Alsace-Lorraine','Toulouse',NULL,'31000','France');
@@ -2479,7 +2475,7 @@ INSERT INTO orders VALUES (10361,'QUICK',1,'1996-11-22 00:00:00','1996-12-20 00:
 INSERT INTO orders VALUES (10362,'BONAP',3,'1996-11-25 00:00:00','1996-12-23 00:00:00','1996-11-28 00:00:00',1,'96.0400','Bon app''','12, rue des Bouchers','Marseille',NULL,'13008','France');
 INSERT INTO orders VALUES (10363,'DRACD',4,'1996-11-26 00:00:00','1996-12-24 00:00:00','1996-12-04 00:00:00',3,'30.5400','Drachenblut Delikatessen','Walserweg 21','Aachen',NULL,'52066','Germany');
 INSERT INTO orders VALUES (10364,'EASTC',1,'1996-11-26 00:00:00','1997-01-07 00:00:00','1996-12-04 00:00:00',1,'71.9700','Eastern Connection','35 King George','London',NULL,'WX3 6FW','UK');
-INSERT INTO orders VALUES (10365,'ANTON',3,'1996-11-27 00:00:00','1996-12-25 00:00:00','1996-12-02 00:00:00',2,'22.0000','Antonio Moreno Taquer','Mataderos 2312','M',NULL,'05023','Mexico');
+INSERT INTO orders VALUES (10365,'ANTON',3,'1996-11-27 00:00:00','1996-12-25 00:00:00','1996-12-02 00:00:00',2,'22.0000','Antonio Moreno Taquer','Mataderos  2312','M',NULL,'05023','Mexico');
 INSERT INTO orders VALUES (10366,'GALED',8,'1996-11-28 00:00:00','1997-01-09 00:00:00','1996-12-30 00:00:00',2,'10.1400','Galer','Rambla de Catalu','Barcelona',NULL,'8022','Spain');
 INSERT INTO orders VALUES (10367,'VAFFE',7,'1996-11-28 00:00:00','1996-12-26 00:00:00','1996-12-02 00:00:00',3,'13.5500','Vaffeljernet','Smagsl','',NULL,'8200','Denmark');
 INSERT INTO orders VALUES (10368,'ERNSH',2,'1996-11-29 00:00:00','1996-12-27 00:00:00','1996-12-02 00:00:00',2,'101.9500','Ernst Handel','Kirchgasse 6','Graz',NULL,'8010','Austria');
@@ -2489,7 +2485,7 @@ INSERT INTO orders VALUES (10371,'LAMAI',1,'1996-12-03 00:00:00','1996-12-31 00:
 INSERT INTO orders VALUES (10372,'QUEEN',5,'1996-12-04 00:00:00','1997-01-01 00:00:00','1996-12-09 00:00:00',2,'890.7800','Queen Cozinha','Alameda dos Can','S','SP','05487-020','Brazil');
 INSERT INTO orders VALUES (10373,'HUNGO',4,'1996-12-05 00:00:00','1997-01-02 00:00:00','1996-12-11 00:00:00',3,'124.1200','Hungry Owl All-Night Grocers','8 Johnstown Road','Cork','Co. Cork',NULL,'Ireland');
 INSERT INTO orders VALUES (10374,'WOLZA',1,'1996-12-05 00:00:00','1997-01-02 00:00:00','1996-12-09 00:00:00',3,'3.9400','Wolski Zajazd','ul. Filtrowa 68','Warszawa',NULL,'01-012','Poland');
-INSERT INTO orders VALUES (10375,'HUNGC',3,'1996-12-06 00:00:00','1997-01-03 00:00:00','1996-12-09 00:00:00',2,'20.1200','Hungry Coyote Import Store','City Center Plaza 516 Main St.','Elgin','OR','97827','USA');
+INSERT INTO orders VALUES (10375,'HUNGC',3,'1996-12-06 00:00:00','1997-01-03 00:00:00','1996-12-09 00:00:00',2,'20.1200','Hungry Coyote Import Store','City Center Plaza\r\n516 Main St.','Elgin','OR','97827','USA');
 INSERT INTO orders VALUES (10376,'MEREP',1,'1996-12-09 00:00:00','1997-01-06 00:00:00','1996-12-13 00:00:00',2,'20.3900','M','43 rue St. Laurent','Montr','Qu','H1J 1C3','Canada');
 INSERT INTO orders VALUES (10377,'SEVES',1,'1996-12-09 00:00:00','1997-01-06 00:00:00','1996-12-13 00:00:00',3,'22.2100','Seven Seas Imports','90 Wadhurst Rd.','London',NULL,'OX15 4NB','UK');
 INSERT INTO orders VALUES (10378,'FOLKO',5,'1996-12-10 00:00:00','1997-01-07 00:00:00','1996-12-19 00:00:00',3,'5.4400','Folk och f','','Br',NULL,'S-844 67','Sweden');
@@ -2497,7 +2493,7 @@ INSERT INTO orders VALUES (10379,'QUEDE',2,'1996-12-11 00:00:00','1997-01-08 00:
 INSERT INTO orders VALUES (10380,'HUNGO',8,'1996-12-12 00:00:00','1997-01-09 00:00:00','1997-01-16 00:00:00',3,'35.0300','Hungry Owl All-Night Grocers','8 Johnstown Road','Cork','Co. Cork',NULL,'Ireland');
 INSERT INTO orders VALUES (10381,'LILAS',3,'1996-12-12 00:00:00','1997-01-09 00:00:00','1996-12-13 00:00:00',3,'7.9900','LILA-Supermercado','Carrera 52 con Ave. Bol','Barquisimeto','Lara','3508','Venezuela');
 INSERT INTO orders VALUES (10382,'ERNSH',4,'1996-12-13 00:00:00','1997-01-10 00:00:00','1996-12-16 00:00:00',1,'94.7700','Ernst Handel','Kirchgasse 6','Graz',NULL,'8010','Austria');
-INSERT INTO orders VALUES (10383,'AROUT',8,'1996-12-16 00:00:00','1997-01-13 00:00:00','1996-12-18 00:00:00',3,'34.2400','Around the Horn','Brook Farm Stratford St. Mary','Colchester','Essex','CO7 6JX','UK');
+INSERT INTO orders VALUES (10383,'AROUT',8,'1996-12-16 00:00:00','1997-01-13 00:00:00','1996-12-18 00:00:00',3,'34.2400','Around the Horn','Brook Farm\r\nStratford St. Mary','Colchester','Essex','CO7 6JX','UK');
 INSERT INTO orders VALUES (10384,'BERGS',3,'1996-12-16 00:00:00','1997-01-13 00:00:00','1996-12-20 00:00:00',3,'168.6400','Berglunds snabbk','Berguvsv','Lule',NULL,'S-958 22','Sweden');
 INSERT INTO orders VALUES (10385,'SPLIR',1,'1996-12-17 00:00:00','1997-01-14 00:00:00','1996-12-23 00:00:00',2,'30.9600','Split Rail Beer & Ale','P.O. Box 555','Lander','WY','82520','USA');
 INSERT INTO orders VALUES (10386,'FAMIA',9,'1996-12-18 00:00:00','1997-01-01 00:00:00','1996-12-25 00:00:00',3,'13.9900','Familia Arquibaldo','Rua Or','S','SP','05442-030','Brazil');
@@ -2508,7 +2504,7 @@ INSERT INTO orders VALUES (10390,'ERNSH',6,'1996-12-23 00:00:00','1997-01-20 00:
 INSERT INTO orders VALUES (10391,'DRACD',3,'1996-12-23 00:00:00','1997-01-20 00:00:00','1996-12-31 00:00:00',3,'5.4500','Drachenblut Delikatessen','Walserweg 21','Aachen',NULL,'52066','Germany');
 INSERT INTO orders VALUES (10392,'PICCO',2,'1996-12-24 00:00:00','1997-01-21 00:00:00','1997-01-01 00:00:00',3,'122.4600','Piccolo und mehr','Geislweg 14','Salzburg',NULL,'5020','Austria');
 INSERT INTO orders VALUES (10393,'SAVEA',1,'1996-12-25 00:00:00','1997-01-22 00:00:00','1997-01-03 00:00:00',3,'126.5600','Save-a-lot Markets','187 Suffolk Ln.','Boise','ID','83720','USA');
-INSERT INTO orders VALUES (10394,'HUNGC',1,'1996-12-25 00:00:00','1997-01-22 00:00:00','1997-01-03 00:00:00',3,'30.3400','Hungry Coyote Import Store','City Center Plaza 516 Main St.','Elgin','OR','97827','USA');
+INSERT INTO orders VALUES (10394,'HUNGC',1,'1996-12-25 00:00:00','1997-01-22 00:00:00','1997-01-03 00:00:00',3,'30.3400','Hungry Coyote Import Store','City Center Plaza\r\n516 Main St.','Elgin','OR','97827','USA');
 INSERT INTO orders VALUES (10395,'HILAA',6,'1996-12-26 00:00:00','1997-01-23 00:00:00','1997-01-03 00:00:00',1,'184.4100','HILARI','Carrera 22 con Ave. Carlos Soublette #8-35','San Crist','T','5022','Venezuela');
 INSERT INTO orders VALUES (10396,'FRANK',1,'1996-12-27 00:00:00','1997-01-10 00:00:00','1997-01-06 00:00:00',3,'135.3500','Frankenversand','Berliner Platz 43','M',NULL,'80805','Germany');
 INSERT INTO orders VALUES (10397,'PRINI',5,'1996-12-27 00:00:00','1997-01-24 00:00:00','1997-01-02 00:00:00',1,'60.2600','Princesa Isabel Vinhos','Estrada da sa','Lisboa',NULL,'1756','Portugal');
@@ -2523,13 +2519,13 @@ INSERT INTO orders VALUES (10405,'LINOD',1,'1997-01-06 00:00:00','1997-02-03 00:
 INSERT INTO orders VALUES (10406,'QUEEN',7,'1997-01-07 00:00:00','1997-02-18 00:00:00','1997-01-13 00:00:00',1,'108.0400','Queen Cozinha','Alameda dos Can','S','SP','05487-020','Brazil');
 INSERT INTO orders VALUES (10407,'OTTIK',2,'1997-01-07 00:00:00','1997-02-04 00:00:00','1997-01-30 00:00:00',2,'91.4800','Ottilies K','Mehrheimerstr. 369','K',NULL,'50739','Germany');
 INSERT INTO orders VALUES (10408,'FOLIG',8,'1997-01-08 00:00:00','1997-02-05 00:00:00','1997-01-14 00:00:00',1,'11.2600','Folies gourmandes','184, chauss','Lille',NULL,'59000','France');
-INSERT INTO orders VALUES (10409,'OCEAN',3,'1997-01-09 00:00:00','1997-02-06 00:00:00','1997-01-14 00:00:00',1,'29.8300','Oc','Ing. Gustavo Moncada 8585 Piso 20-A','Buenos Aires',NULL,'1010','Argentina');
+INSERT INTO orders VALUES (10409,'OCEAN',3,'1997-01-09 00:00:00','1997-02-06 00:00:00','1997-01-14 00:00:00',1,'29.8300','Oc','Ing. Gustavo Moncada 8585\r\nPiso 20-A','Buenos Aires',NULL,'1010','Argentina');
 INSERT INTO orders VALUES (10410,'BOTTM',3,'1997-01-10 00:00:00','1997-02-07 00:00:00','1997-01-15 00:00:00',3,'2.4000','Bottom-Dollar Markets','23 Tsawassen Blvd.','Tsawassen','BC','T2F 8M4','Canada');
 INSERT INTO orders VALUES (10411,'BOTTM',9,'1997-01-10 00:00:00','1997-02-07 00:00:00','1997-01-21 00:00:00',3,'23.6500','Bottom-Dollar Markets','23 Tsawassen Blvd.','Tsawassen','BC','T2F 8M4','Canada');
 INSERT INTO orders VALUES (10412,'WARTH',8,'1997-01-13 00:00:00','1997-02-10 00:00:00','1997-01-15 00:00:00',2,'3.7700','Wartian Herkku','Torikatu 38','Oulu',NULL,'90110','Finland');
 INSERT INTO orders VALUES (10413,'LAMAI',3,'1997-01-14 00:00:00','1997-02-11 00:00:00','1997-01-16 00:00:00',2,'95.6600','La maison d''Asie','1 rue Alsace-Lorraine','Toulouse',NULL,'31000','France');
 INSERT INTO orders VALUES (10414,'FAMIA',2,'1997-01-14 00:00:00','1997-02-11 00:00:00','1997-01-17 00:00:00',3,'21.4800','Familia Arquibaldo','Rua Or','S','SP','05442-030','Brazil');
-INSERT INTO orders VALUES (10415,'HUNGC',3,'1997-01-15 00:00:00','1997-02-12 00:00:00','1997-01-24 00:00:00',1,'0.2000','Hungry Coyote Import Store','City Center Plaza 516 Main St.','Elgin','OR','97827','USA');
+INSERT INTO orders VALUES (10415,'HUNGC',3,'1997-01-15 00:00:00','1997-02-12 00:00:00','1997-01-24 00:00:00',1,'0.2000','Hungry Coyote Import Store','City Center Plaza\r\n516 Main St.','Elgin','OR','97827','USA');
 INSERT INTO orders VALUES (10416,'WARTH',8,'1997-01-16 00:00:00','1997-02-13 00:00:00','1997-01-27 00:00:00',3,'22.7200','Wartian Herkku','Torikatu 38','Oulu',NULL,'90110','Finland');
 INSERT INTO orders VALUES (10417,'SIMOB',4,'1997-01-16 00:00:00','1997-02-13 00:00:00','1997-01-28 00:00:00',3,'70.2900','Simons bistro','Vinb','K',NULL,'1734','Denmark');
 INSERT INTO orders VALUES (10418,'QUICK',4,'1997-01-17 00:00:00','1997-02-14 00:00:00','1997-01-24 00:00:00',1,'17.5500','QUICK-Stop','Taucherstra','Cunewalde',NULL,'01307','Germany');
@@ -2549,7 +2545,7 @@ INSERT INTO orders VALUES (10431,'BOTTM',4,'1997-01-30 00:00:00','1997-02-13 00:
 INSERT INTO orders VALUES (10432,'SPLIR',3,'1997-01-31 00:00:00','1997-02-14 00:00:00','1997-02-07 00:00:00',2,'4.3400','Split Rail Beer & Ale','P.O. Box 555','Lander','WY','82520','USA');
 INSERT INTO orders VALUES (10433,'PRINI',3,'1997-02-03 00:00:00','1997-03-03 00:00:00','1997-03-04 00:00:00',3,'73.8300','Princesa Isabel Vinhos','Estrada da sa','Lisboa',NULL,'1756','Portugal');
 INSERT INTO orders VALUES (10434,'FOLKO',3,'1997-02-03 00:00:00','1997-03-03 00:00:00','1997-02-13 00:00:00',2,'17.9200','Folk och f','','Br',NULL,'S-844 67','Sweden');
-INSERT INTO orders VALUES (10435,'CONSH',8,'1997-02-04 00:00:00','1997-03-18 00:00:00','1997-02-07 00:00:00',2,'9.2100','Consolidated Holdings','Berkeley Gardens 12 Brewery ','London',NULL,'WX1 6LT','UK');
+INSERT INTO orders VALUES (10435,'CONSH',8,'1997-02-04 00:00:00','1997-03-18 00:00:00','1997-02-07 00:00:00',2,'9.2100','Consolidated Holdings','Berkeley Gardens\r\n12  Brewery ','London',NULL,'WX1 6LT','UK');
 INSERT INTO orders VALUES (10436,'BLONP',3,'1997-02-05 00:00:00','1997-03-05 00:00:00','1997-02-11 00:00:00',2,'156.6600','Blondel p','24, place Kl','Strasbourg',NULL,'67000','France');
 INSERT INTO orders VALUES (10437,'WARTH',8,'1997-02-05 00:00:00','1997-03-05 00:00:00','1997-02-12 00:00:00',1,'19.9700','Wartian Herkku','Torikatu 38','Oulu',NULL,'90110','Finland');
 INSERT INTO orders VALUES (10438,'TOMSP',3,'1997-02-06 00:00:00','1997-03-06 00:00:00','1997-02-14 00:00:00',2,'8.2400','Toms Spezialit','Luisenstr. 48','M',NULL,'44087','Germany');
@@ -2567,7 +2563,7 @@ INSERT INTO orders VALUES (10449,'BLONP',3,'1997-02-18 00:00:00','1997-03-18 00:
 INSERT INTO orders VALUES (10450,'VICTE',8,'1997-02-19 00:00:00','1997-03-19 00:00:00','1997-03-11 00:00:00',2,'7.2300','Victuailles en stock','2, rue du Commerce','Lyon',NULL,'69004','France');
 INSERT INTO orders VALUES (10451,'QUICK',4,'1997-02-19 00:00:00','1997-03-05 00:00:00','1997-03-12 00:00:00',3,'189.0900','QUICK-Stop','Taucherstra','Cunewalde',NULL,'01307','Germany');
 INSERT INTO orders VALUES (10452,'SAVEA',8,'1997-02-20 00:00:00','1997-03-20 00:00:00','1997-02-26 00:00:00',1,'140.2600','Save-a-lot Markets','187 Suffolk Ln.','Boise','ID','83720','USA');
-INSERT INTO orders VALUES (10453,'AROUT',1,'1997-02-21 00:00:00','1997-03-21 00:00:00','1997-02-26 00:00:00',2,'25.3600','Around the Horn','Brook Farm Stratford St. Mary','Colchester','Essex','CO7 6JX','UK');
+INSERT INTO orders VALUES (10453,'AROUT',1,'1997-02-21 00:00:00','1997-03-21 00:00:00','1997-02-26 00:00:00',2,'25.3600','Around the Horn','Brook Farm\r\nStratford St. Mary','Colchester','Essex','CO7 6JX','UK');
 INSERT INTO orders VALUES (10454,'LAMAI',4,'1997-02-21 00:00:00','1997-03-21 00:00:00','1997-02-25 00:00:00',3,'2.7400','La maison d''Asie','1 rue Alsace-Lorraine','Toulouse',NULL,'31000','France');
 INSERT INTO orders VALUES (10455,'WARTH',8,'1997-02-24 00:00:00','1997-04-07 00:00:00','1997-03-03 00:00:00',2,'180.4500','Wartian Herkku','Torikatu 38','Oulu',NULL,'90110','Finland');
 INSERT INTO orders VALUES (10456,'KOENE',8,'1997-02-25 00:00:00','1997-04-08 00:00:00','1997-02-28 00:00:00',2,'8.1200','K','Maubelstr. 90','Brandenburg',NULL,'14776','Germany');
@@ -2576,7 +2572,7 @@ INSERT INTO orders VALUES (10458,'SUPRD',7,'1997-02-26 00:00:00','1997-03-26 00:
 INSERT INTO orders VALUES (10459,'VICTE',4,'1997-02-27 00:00:00','1997-03-27 00:00:00','1997-02-28 00:00:00',2,'25.0900','Victuailles en stock','2, rue du Commerce','Lyon',NULL,'69004','France');
 INSERT INTO orders VALUES (10460,'FOLKO',8,'1997-02-28 00:00:00','1997-03-28 00:00:00','1997-03-03 00:00:00',1,'16.2700','Folk och f','','Br',NULL,'S-844 67','Sweden');
 INSERT INTO orders VALUES (10461,'LILAS',1,'1997-02-28 00:00:00','1997-03-28 00:00:00','1997-03-05 00:00:00',3,'148.6100','LILA-Supermercado','Carrera 52 con Ave. Bol','Barquisimeto','Lara','3508','Venezuela');
-INSERT INTO orders VALUES (10462,'CONSH',2,'1997-03-03 00:00:00','1997-03-31 00:00:00','1997-03-18 00:00:00',1,'6.1700','Consolidated Holdings','Berkeley Gardens 12 Brewery ','London',NULL,'WX1 6LT','UK');
+INSERT INTO orders VALUES (10462,'CONSH',2,'1997-03-03 00:00:00','1997-03-31 00:00:00','1997-03-18 00:00:00',1,'6.1700','Consolidated Holdings','Berkeley Gardens\r\n12  Brewery ','London',NULL,'WX1 6LT','UK');
 INSERT INTO orders VALUES (10463,'SUPRD',5,'1997-03-04 00:00:00','1997-04-01 00:00:00','1997-03-06 00:00:00',3,'14.7800','Supr','Boulevard Tirou, 255','Charleroi',NULL,'B-6000','Belgium');
 INSERT INTO orders VALUES (10464,'FURIB',4,'1997-03-04 00:00:00','1997-04-01 00:00:00','1997-03-14 00:00:00',2,'89.0000','Furia Bacalhau e Frutos do Mar','Jardim das rosas n. 32','Lisboa',NULL,'1675','Portugal');
 INSERT INTO orders VALUES (10465,'VAFFE',1,'1997-03-05 00:00:00','1997-04-02 00:00:00','1997-03-14 00:00:00',3,'145.0400','Vaffeljernet','Smagsl','',NULL,'8200','Denmark');
@@ -2587,7 +2583,7 @@ INSERT INTO orders VALUES (10469,'WHITC',1,'1997-03-10 00:00:00','1997-04-07 00:
 INSERT INTO orders VALUES (10470,'BONAP',4,'1997-03-11 00:00:00','1997-04-08 00:00:00','1997-03-14 00:00:00',2,'64.5600','Bon app''','12, rue des Bouchers','Marseille',NULL,'13008','France');
 INSERT INTO orders VALUES (10471,'BSBEV',2,'1997-03-11 00:00:00','1997-04-08 00:00:00','1997-03-18 00:00:00',3,'45.5900','B''s Beverages','Fauntleroy Circus','London',NULL,'EC2 5NT','UK');
 INSERT INTO orders VALUES (10472,'SEVES',8,'1997-03-12 00:00:00','1997-04-09 00:00:00','1997-03-19 00:00:00',1,'4.2000','Seven Seas Imports','90 Wadhurst Rd.','London',NULL,'OX15 4NB','UK');
-INSERT INTO orders VALUES (10473,'ISLAT',1,'1997-03-13 00:00:00','1997-03-27 00:00:00','1997-03-21 00:00:00',3,'16.3700','Island Trading','Garden House Crowther Way','Cowes','Isle of Wight','PO31 7PJ','UK');
+INSERT INTO orders VALUES (10473,'ISLAT',1,'1997-03-13 00:00:00','1997-03-27 00:00:00','1997-03-21 00:00:00',3,'16.3700','Island Trading','Garden House\r\nCrowther Way','Cowes','Isle of Wight','PO31 7PJ','UK');
 INSERT INTO orders VALUES (10474,'PERIC',5,'1997-03-13 00:00:00','1997-04-10 00:00:00','1997-03-21 00:00:00',2,'83.4900','Pericles Comidas cl','Calle Dr. Jorge Cash 321','M',NULL,'05033','Mexico');
 INSERT INTO orders VALUES (10475,'SUPRD',9,'1997-03-14 00:00:00','1997-04-11 00:00:00','1997-04-04 00:00:00',1,'68.5200','Supr','Boulevard Tirou, 255','Charleroi',NULL,'B-6000','Belgium');
 INSERT INTO orders VALUES (10476,'HILAA',8,'1997-03-17 00:00:00','1997-04-14 00:00:00','1997-03-24 00:00:00',3,'4.4100','HILARI','Carrera 22 con Ave. Carlos Soublette #8-35','San Crist','T','5022','Venezuela');
@@ -2621,7 +2617,7 @@ INSERT INTO orders VALUES (10503,'HUNGO',6,'1997-04-11 00:00:00','1997-05-09 00:
 INSERT INTO orders VALUES (10504,'WHITC',4,'1997-04-11 00:00:00','1997-05-09 00:00:00','1997-04-18 00:00:00',3,'59.1300','White Clover Markets','1029 - 12th Ave. S.','Seattle','WA','98124','USA');
 INSERT INTO orders VALUES (10505,'MEREP',3,'1997-04-14 00:00:00','1997-05-12 00:00:00','1997-04-21 00:00:00',3,'7.1300','M','43 rue St. Laurent','Montr','Qu','H1J 1C3','Canada');
 INSERT INTO orders VALUES (10506,'KOENE',9,'1997-04-15 00:00:00','1997-05-13 00:00:00','1997-05-02 00:00:00',2,'21.1900','K','Maubelstr. 90','Brandenburg',NULL,'14776','Germany');
-INSERT INTO orders VALUES (10507,'ANTON',7,'1997-04-15 00:00:00','1997-05-13 00:00:00','1997-04-22 00:00:00',1,'47.4500','Antonio Moreno Taquer','Mataderos 2312','M',NULL,'05023','Mexico');
+INSERT INTO orders VALUES (10507,'ANTON',7,'1997-04-15 00:00:00','1997-05-13 00:00:00','1997-04-22 00:00:00',1,'47.4500','Antonio Moreno Taquer','Mataderos  2312','M',NULL,'05023','Mexico');
 INSERT INTO orders VALUES (10508,'OTTIK',1,'1997-04-16 00:00:00','1997-05-14 00:00:00','1997-05-13 00:00:00',2,'4.9900','Ottilies K','Mehrheimerstr. 369','K',NULL,'50739','Germany');
 INSERT INTO orders VALUES (10509,'BLAUS',4,'1997-04-17 00:00:00','1997-05-15 00:00:00','1997-04-29 00:00:00',1,'0.1500','Blauer See Delikatessen','Forsterstr. 57','Mannheim',NULL,'68306','Germany');
 INSERT INTO orders VALUES (10510,'SAVEA',6,'1997-04-18 00:00:00','1997-05-16 00:00:00','1997-04-28 00:00:00',3,'367.6300','Save-a-lot Markets','187 Suffolk Ln.','Boise','ID','83720','USA');
@@ -2631,7 +2627,7 @@ INSERT INTO orders VALUES (10513,'WANDK',7,'1997-04-22 00:00:00','1997-06-03 00:
 INSERT INTO orders VALUES (10514,'ERNSH',3,'1997-04-22 00:00:00','1997-05-20 00:00:00','1997-05-16 00:00:00',2,'789.9500','Ernst Handel','Kirchgasse 6','Graz',NULL,'8010','Austria');
 INSERT INTO orders VALUES (10515,'QUICK',2,'1997-04-23 00:00:00','1997-05-07 00:00:00','1997-05-23 00:00:00',1,'204.4700','QUICK-Stop','Taucherstra','Cunewalde',NULL,'01307','Germany');
 INSERT INTO orders VALUES (10516,'HUNGO',2,'1997-04-24 00:00:00','1997-05-22 00:00:00','1997-05-01 00:00:00',3,'62.7800','Hungry Owl All-Night Grocers','8 Johnstown Road','Cork','Co. Cork',NULL,'Ireland');
-INSERT INTO orders VALUES (10517,'NORTS',3,'1997-04-24 00:00:00','1997-05-22 00:00:00','1997-04-29 00:00:00',3,'32.0700','North/South','South House 300 Queensbridge','London',NULL,'SW7 1RZ','UK');
+INSERT INTO orders VALUES (10517,'NORTS',3,'1997-04-24 00:00:00','1997-05-22 00:00:00','1997-04-29 00:00:00',3,'32.0700','North/South','South House\r\n300 Queensbridge','London',NULL,'SW7 1RZ','UK');
 INSERT INTO orders VALUES (10518,'TORTU',4,'1997-04-25 00:00:00','1997-05-09 00:00:00','1997-05-05 00:00:00',2,'218.1500','Tortuga Restaurante','Avda. Azteca 123','M',NULL,'05033','Mexico');
 INSERT INTO orders VALUES (10519,'CHOPS',6,'1997-04-28 00:00:00','1997-05-26 00:00:00','1997-05-01 00:00:00',3,'91.7600','Chop-suey Chinese','Hauptstr. 31','Bern',NULL,'3012','Switzerland');
 INSERT INTO orders VALUES (10520,'SANTG',7,'1997-04-29 00:00:00','1997-05-27 00:00:00','1997-05-01 00:00:00',1,'13.3700','Sant','Erling Skakkes gate 78','Stavern',NULL,'4110','Norway');
@@ -2645,11 +2641,11 @@ INSERT INTO orders VALUES (10527,'QUICK',7,'1997-05-05 00:00:00','1997-06-02 00:
 INSERT INTO orders VALUES (10528,'GREAL',6,'1997-05-06 00:00:00','1997-05-20 00:00:00','1997-05-09 00:00:00',2,'3.3500','Great Lakes Food Market','2732 Baker Blvd.','Eugene','OR','97403','USA');
 INSERT INTO orders VALUES (10529,'MAISD',5,'1997-05-07 00:00:00','1997-06-04 00:00:00','1997-05-09 00:00:00',2,'66.6900','Maison Dewey','Rue Joseph-Bens 532','Bruxelles',NULL,'B-1180','Belgium');
 INSERT INTO orders VALUES (10530,'PICCO',3,'1997-05-08 00:00:00','1997-06-05 00:00:00','1997-05-12 00:00:00',2,'339.2200','Piccolo und mehr','Geislweg 14','Salzburg',NULL,'5020','Austria');
-INSERT INTO orders VALUES (10531,'OCEAN',7,'1997-05-08 00:00:00','1997-06-05 00:00:00','1997-05-19 00:00:00',1,'8.1200','Oc','Ing. Gustavo Moncada 8585 Piso 20-A','Buenos Aires',NULL,'1010','Argentina');
+INSERT INTO orders VALUES (10531,'OCEAN',7,'1997-05-08 00:00:00','1997-06-05 00:00:00','1997-05-19 00:00:00',1,'8.1200','Oc','Ing. Gustavo Moncada 8585\r\nPiso 20-A','Buenos Aires',NULL,'1010','Argentina');
 INSERT INTO orders VALUES (10532,'EASTC',7,'1997-05-09 00:00:00','1997-06-06 00:00:00','1997-05-12 00:00:00',3,'74.4600','Eastern Connection','35 King George','London',NULL,'WX3 6FW','UK');
 INSERT INTO orders VALUES (10533,'FOLKO',8,'1997-05-12 00:00:00','1997-06-09 00:00:00','1997-05-22 00:00:00',1,'188.0400','Folk och f','','Br',NULL,'S-844 67','Sweden');
 INSERT INTO orders VALUES (10534,'LEHMS',8,'1997-05-12 00:00:00','1997-06-09 00:00:00','1997-05-14 00:00:00',2,'27.9400','Lehmanns Marktstand','Magazinweg 7','Frankfurt a.M. ',NULL,'60528','Germany');
-INSERT INTO orders VALUES (10535,'ANTON',4,'1997-05-13 00:00:00','1997-06-10 00:00:00','1997-05-21 00:00:00',1,'15.6400','Antonio Moreno Taquer','Mataderos 2312','M',NULL,'05023','Mexico');
+INSERT INTO orders VALUES (10535,'ANTON',4,'1997-05-13 00:00:00','1997-06-10 00:00:00','1997-05-21 00:00:00',1,'15.6400','Antonio Moreno Taquer','Mataderos  2312','M',NULL,'05023','Mexico');
 INSERT INTO orders VALUES (10536,'LEHMS',3,'1997-05-14 00:00:00','1997-06-11 00:00:00','1997-06-06 00:00:00',2,'58.8800','Lehmanns Marktstand','Magazinweg 7','Frankfurt a.M. ',NULL,'60528','Germany');
 INSERT INTO orders VALUES (10537,'RICSU',1,'1997-05-14 00:00:00','1997-05-28 00:00:00','1997-05-19 00:00:00',1,'78.8500','Richter Supermarkt','Starenweg 5','Gen',NULL,'1204','Switzerland');
 INSERT INTO orders VALUES (10538,'BSBEV',9,'1997-05-15 00:00:00','1997-06-12 00:00:00','1997-05-16 00:00:00',3,'4.8700','B''s Beverages','Fauntleroy Circus','London',NULL,'EC2 5NT','UK');
@@ -2672,7 +2668,7 @@ INSERT INTO orders VALUES (10554,'OTTIK',4,'1997-05-30 00:00:00','1997-06-27 00:
 INSERT INTO orders VALUES (10555,'SAVEA',6,'1997-06-02 00:00:00','1997-06-30 00:00:00','1997-06-04 00:00:00',3,'252.4900','Save-a-lot Markets','187 Suffolk Ln.','Boise','ID','83720','USA');
 INSERT INTO orders VALUES (10556,'SIMOB',2,'1997-06-03 00:00:00','1997-07-15 00:00:00','1997-06-13 00:00:00',1,'9.8000','Simons bistro','Vinb','K',NULL,'1734','Denmark');
 INSERT INTO orders VALUES (10557,'LEHMS',9,'1997-06-03 00:00:00','1997-06-17 00:00:00','1997-06-06 00:00:00',2,'96.7200','Lehmanns Marktstand','Magazinweg 7','Frankfurt a.M. ',NULL,'60528','Germany');
-INSERT INTO orders VALUES (10558,'AROUT',1,'1997-06-04 00:00:00','1997-07-02 00:00:00','1997-06-10 00:00:00',2,'72.9700','Around the Horn','Brook Farm Stratford St. Mary','Colchester','Essex','CO7 6JX','UK');
+INSERT INTO orders VALUES (10558,'AROUT',1,'1997-06-04 00:00:00','1997-07-02 00:00:00','1997-06-10 00:00:00',2,'72.9700','Around the Horn','Brook Farm\r\nStratford St. Mary','Colchester','Essex','CO7 6JX','UK');
 INSERT INTO orders VALUES (10559,'BLONP',6,'1997-06-05 00:00:00','1997-07-03 00:00:00','1997-06-13 00:00:00',1,'8.0500','Blondel p','24, place Kl','Strasbourg',NULL,'67000','France');
 INSERT INTO orders VALUES (10560,'FRANK',8,'1997-06-06 00:00:00','1997-07-04 00:00:00','1997-06-09 00:00:00',1,'36.6500','Frankenversand','Berliner Platz 43','M',NULL,'80805','Germany');
 INSERT INTO orders VALUES (10561,'FOLKO',2,'1997-06-06 00:00:00','1997-07-04 00:00:00','1997-06-09 00:00:00',2,'242.2100','Folk och f','','Br',NULL,'S-844 67','Sweden');
@@ -2687,13 +2683,13 @@ INSERT INTO orders VALUES (10569,'RATTC',5,'1997-06-16 00:00:00','1997-07-14 00:
 INSERT INTO orders VALUES (10570,'MEREP',3,'1997-06-17 00:00:00','1997-07-15 00:00:00','1997-06-19 00:00:00',3,'188.9900','M','43 rue St. Laurent','Montr','Qu','H1J 1C3','Canada');
 INSERT INTO orders VALUES (10571,'ERNSH',8,'1997-06-17 00:00:00','1997-07-29 00:00:00','1997-07-04 00:00:00',3,'26.0600','Ernst Handel','Kirchgasse 6','Graz',NULL,'8010','Austria');
 INSERT INTO orders VALUES (10572,'BERGS',3,'1997-06-18 00:00:00','1997-07-16 00:00:00','1997-06-25 00:00:00',2,'116.4300','Berglunds snabbk','Berguvsv','Lule',NULL,'S-958 22','Sweden');
-INSERT INTO orders VALUES (10573,'ANTON',7,'1997-06-19 00:00:00','1997-07-17 00:00:00','1997-06-20 00:00:00',3,'84.8400','Antonio Moreno Taquer','Mataderos 2312','M',NULL,'05023','Mexico');
+INSERT INTO orders VALUES (10573,'ANTON',7,'1997-06-19 00:00:00','1997-07-17 00:00:00','1997-06-20 00:00:00',3,'84.8400','Antonio Moreno Taquer','Mataderos  2312','M',NULL,'05023','Mexico');
 INSERT INTO orders VALUES (10574,'TRAIH',4,'1997-06-19 00:00:00','1997-07-17 00:00:00','1997-06-30 00:00:00',2,'37.6000','Trail''s Head Gourmet Provisioners','722 DaVinci Blvd.','Kirkland','WA','98034','USA');
 INSERT INTO orders VALUES (10575,'MORGK',5,'1997-06-20 00:00:00','1997-07-04 00:00:00','1997-06-30 00:00:00',1,'127.3400','Morgenstern Gesundkost','Heerstr. 22','Leipzig',NULL,'04179','Germany');
 INSERT INTO orders VALUES (10576,'TORTU',3,'1997-06-23 00:00:00','1997-07-07 00:00:00','1997-06-30 00:00:00',3,'18.5600','Tortuga Restaurante','Avda. Azteca 123','M',NULL,'05033','Mexico');
 INSERT INTO orders VALUES (10577,'TRAIH',9,'1997-06-23 00:00:00','1997-08-04 00:00:00','1997-06-30 00:00:00',2,'25.4100','Trail''s Head Gourmet Provisioners','722 DaVinci Blvd.','Kirkland','WA','98034','USA');
 INSERT INTO orders VALUES (10578,'BSBEV',4,'1997-06-24 00:00:00','1997-07-22 00:00:00','1997-07-25 00:00:00',3,'29.6000','B''s Beverages','Fauntleroy Circus','London',NULL,'EC2 5NT','UK');
-INSERT INTO orders VALUES (10579,'LETSS',1,'1997-06-25 00:00:00','1997-07-23 00:00:00','1997-07-04 00:00:00',2,'13.7300','Let''s Stop N Shop','87 Polk St. Suite 5','San Francisco','CA','94117','USA');
+INSERT INTO orders VALUES (10579,'LETSS',1,'1997-06-25 00:00:00','1997-07-23 00:00:00','1997-07-04 00:00:00',2,'13.7300','Let''s Stop N Shop','87 Polk St.\r\nSuite 5','San Francisco','CA','94117','USA');
 INSERT INTO orders VALUES (10580,'OTTIK',4,'1997-06-26 00:00:00','1997-07-24 00:00:00','1997-07-01 00:00:00',3,'75.8900','Ottilies K','Mehrheimerstr. 369','K',NULL,'50739','Germany');
 INSERT INTO orders VALUES (10581,'FAMIA',3,'1997-06-26 00:00:00','1997-07-24 00:00:00','1997-07-02 00:00:00',1,'3.0100','Familia Arquibaldo','Rua Or','S','SP','05442-030','Brazil');
 INSERT INTO orders VALUES (10582,'BLAUS',3,'1997-06-27 00:00:00','1997-07-25 00:00:00','1997-07-14 00:00:00',2,'27.7100','Blauer See Delikatessen','Forsterstr. 57','Mannheim',NULL,'68306','Germany');
@@ -2714,7 +2710,7 @@ INSERT INTO orders VALUES (10596,'WHITC',8,'1997-07-11 00:00:00','1997-08-08 00:
 INSERT INTO orders VALUES (10597,'PICCO',7,'1997-07-11 00:00:00','1997-08-08 00:00:00','1997-07-18 00:00:00',3,'35.1200','Piccolo und mehr','Geislweg 14','Salzburg',NULL,'5020','Austria');
 INSERT INTO orders VALUES (10598,'RATTC',1,'1997-07-14 00:00:00','1997-08-11 00:00:00','1997-07-18 00:00:00',3,'44.4200','Rattlesnake Canyon Grocery','2817 Milton Dr.','Albuquerque','NM','87110','USA');
 INSERT INTO orders VALUES (10599,'BSBEV',6,'1997-07-15 00:00:00','1997-08-26 00:00:00','1997-07-21 00:00:00',3,'29.9800','B''s Beverages','Fauntleroy Circus','London',NULL,'EC2 5NT','UK');
-INSERT INTO orders VALUES (10600,'HUNGC',4,'1997-07-16 00:00:00','1997-08-13 00:00:00','1997-07-21 00:00:00',1,'45.1300','Hungry Coyote Import Store','City Center Plaza 516 Main St.','Elgin','OR','97827','USA');
+INSERT INTO orders VALUES (10600,'HUNGC',4,'1997-07-16 00:00:00','1997-08-13 00:00:00','1997-07-21 00:00:00',1,'45.1300','Hungry Coyote Import Store','City Center Plaza\r\n516 Main St.','Elgin','OR','97827','USA');
 INSERT INTO orders VALUES (10601,'HILAA',7,'1997-07-16 00:00:00','1997-08-27 00:00:00','1997-07-22 00:00:00',1,'58.3000','HILARI','Carrera 22 con Ave. Carlos Soublette #8-35','San Crist','T','5022','Venezuela');
 INSERT INTO orders VALUES (10602,'VAFFE',8,'1997-07-17 00:00:00','1997-08-14 00:00:00','1997-07-22 00:00:00',2,'2.9200','Vaffeljernet','Smagsl','',NULL,'8200','Denmark');
 INSERT INTO orders VALUES (10603,'SAVEA',8,'1997-07-18 00:00:00','1997-08-15 00:00:00','1997-08-08 00:00:00',2,'48.7700','Save-a-lot Markets','187 Suffolk Ln.','Boise','ID','83720','USA');
@@ -2735,7 +2731,7 @@ INSERT INTO orders VALUES (10617,'GREAL',4,'1997-07-31 00:00:00','1997-08-28 00:
 INSERT INTO orders VALUES (10618,'MEREP',1,'1997-08-01 00:00:00','1997-09-12 00:00:00','1997-08-08 00:00:00',1,'154.6800','M','43 rue St. Laurent','Montr','Qu','H1J 1C3','Canada');
 INSERT INTO orders VALUES (10619,'MEREP',3,'1997-08-04 00:00:00','1997-09-01 00:00:00','1997-08-07 00:00:00',3,'91.0500','M','43 rue St. Laurent','Montr','Qu','H1J 1C3','Canada');
 INSERT INTO orders VALUES (10620,'LAUGB',2,'1997-08-05 00:00:00','1997-09-02 00:00:00','1997-08-14 00:00:00',3,'0.9400','Laughing Bacchus Wine Cellars','2319 Elm St.','Vancouver','BC','V3F 2K1','Canada');
-INSERT INTO orders VALUES (10621,'ISLAT',4,'1997-08-05 00:00:00','1997-09-02 00:00:00','1997-08-11 00:00:00',2,'23.7300','Island Trading','Garden House Crowther Way','Cowes','Isle of Wight','PO31 7PJ','UK');
+INSERT INTO orders VALUES (10621,'ISLAT',4,'1997-08-05 00:00:00','1997-09-02 00:00:00','1997-08-11 00:00:00',2,'23.7300','Island Trading','Garden House\r\nCrowther Way','Cowes','Isle of Wight','PO31 7PJ','UK');
 INSERT INTO orders VALUES (10622,'RICAR',4,'1997-08-06 00:00:00','1997-09-03 00:00:00','1997-08-11 00:00:00',3,'50.9700','Ricardo Adocicados','Av. Copacabana, 267','Rio de Janeiro','RJ','02389-890','Brazil');
 INSERT INTO orders VALUES (10623,'FRANK',8,'1997-08-07 00:00:00','1997-09-04 00:00:00','1997-08-12 00:00:00',2,'97.1800','Frankenversand','Berliner Platz 43','M',NULL,'80805','Germany');
 INSERT INTO orders VALUES (10624,'THECR',4,'1997-08-07 00:00:00','1997-09-04 00:00:00','1997-08-19 00:00:00',2,'94.8000','The Cracker Box','55 Grizzly Peak Rd.','Butte','MT','59801','USA');
@@ -2774,7 +2770,7 @@ INSERT INTO orders VALUES (10656,'GREAL',6,'1997-09-04 00:00:00','1997-10-02 00:
 INSERT INTO orders VALUES (10657,'SAVEA',2,'1997-09-04 00:00:00','1997-10-02 00:00:00','1997-09-15 00:00:00',2,'352.6900','Save-a-lot Markets','187 Suffolk Ln.','Boise','ID','83720','USA');
 INSERT INTO orders VALUES (10658,'QUICK',4,'1997-09-05 00:00:00','1997-10-03 00:00:00','1997-09-08 00:00:00',1,'364.1500','QUICK-Stop','Taucherstra','Cunewalde',NULL,'01307','Germany');
 INSERT INTO orders VALUES (10659,'QUEEN',7,'1997-09-05 00:00:00','1997-10-03 00:00:00','1997-09-10 00:00:00',2,'105.8100','Queen Cozinha','Alameda dos Can','S','SP','05487-020','Brazil');
-INSERT INTO orders VALUES (10660,'HUNGC',8,'1997-09-08 00:00:00','1997-10-06 00:00:00','1997-10-15 00:00:00',1,'111.2900','Hungry Coyote Import Store','City Center Plaza 516 Main St.','Elgin','OR','97827','USA');
+INSERT INTO orders VALUES (10660,'HUNGC',8,'1997-09-08 00:00:00','1997-10-06 00:00:00','1997-10-15 00:00:00',1,'111.2900','Hungry Coyote Import Store','City Center Plaza\r\n516 Main St.','Elgin','OR','97827','USA');
 INSERT INTO orders VALUES (10661,'HUNGO',7,'1997-09-09 00:00:00','1997-10-07 00:00:00','1997-09-15 00:00:00',3,'17.5500','Hungry Owl All-Night Grocers','8 Johnstown Road','Cork','Co. Cork',NULL,'Ireland');
 INSERT INTO orders VALUES (10662,'LONEP',3,'1997-09-09 00:00:00','1997-10-07 00:00:00','1997-09-18 00:00:00',2,'1.2800','Lonesome Pine Restaurant','89 Chiaroscuro Rd.','Portland','OR','97219','USA');
 INSERT INTO orders VALUES (10663,'BONAP',2,'1997-09-10 00:00:00','1997-09-24 00:00:00','1997-10-03 00:00:00',2,'113.1500','Bon app''','12, rue des Bouchers','Marseille',NULL,'13008','France');
@@ -2788,15 +2784,15 @@ INSERT INTO orders VALUES (10670,'FRANK',4,'1997-09-16 00:00:00','1997-10-14 00:
 INSERT INTO orders VALUES (10671,'FRANR',1,'1997-09-17 00:00:00','1997-10-15 00:00:00','1997-09-24 00:00:00',1,'30.3400','France restauration','54, rue Royale','Nantes',NULL,'44000','France');
 INSERT INTO orders VALUES (10672,'BERGS',9,'1997-09-17 00:00:00','1997-10-01 00:00:00','1997-09-26 00:00:00',2,'95.7500','Berglunds snabbk','Berguvsv','Lule',NULL,'S-958 22','Sweden');
 INSERT INTO orders VALUES (10673,'WILMK',2,'1997-09-18 00:00:00','1997-10-16 00:00:00','1997-09-19 00:00:00',1,'22.7600','Wilman Kala','Keskuskatu 45','Helsinki',NULL,'21240','Finland');
-INSERT INTO orders VALUES (10674,'ISLAT',4,'1997-09-18 00:00:00','1997-10-16 00:00:00','1997-09-30 00:00:00',2,'0.9000','Island Trading','Garden House Crowther Way','Cowes','Isle of Wight','PO31 7PJ','UK');
+INSERT INTO orders VALUES (10674,'ISLAT',4,'1997-09-18 00:00:00','1997-10-16 00:00:00','1997-09-30 00:00:00',2,'0.9000','Island Trading','Garden House\r\nCrowther Way','Cowes','Isle of Wight','PO31 7PJ','UK');
 INSERT INTO orders VALUES (10675,'FRANK',5,'1997-09-19 00:00:00','1997-10-17 00:00:00','1997-09-23 00:00:00',2,'31.8500','Frankenversand','Berliner Platz 43','M',NULL,'80805','Germany');
 INSERT INTO orders VALUES (10676,'TORTU',2,'1997-09-22 00:00:00','1997-10-20 00:00:00','1997-09-29 00:00:00',2,'2.0100','Tortuga Restaurante','Avda. Azteca 123','M',NULL,'05033','Mexico');
-INSERT INTO orders VALUES (10677,'ANTON',1,'1997-09-22 00:00:00','1997-10-20 00:00:00','1997-09-26 00:00:00',3,'4.0300','Antonio Moreno Taquer','Mataderos 2312','M',NULL,'05023','Mexico');
+INSERT INTO orders VALUES (10677,'ANTON',1,'1997-09-22 00:00:00','1997-10-20 00:00:00','1997-09-26 00:00:00',3,'4.0300','Antonio Moreno Taquer','Mataderos  2312','M',NULL,'05023','Mexico');
 INSERT INTO orders VALUES (10678,'SAVEA',7,'1997-09-23 00:00:00','1997-10-21 00:00:00','1997-10-16 00:00:00',3,'388.9800','Save-a-lot Markets','187 Suffolk Ln.','Boise','ID','83720','USA');
 INSERT INTO orders VALUES (10679,'BLONP',8,'1997-09-23 00:00:00','1997-10-21 00:00:00','1997-09-30 00:00:00',3,'27.9400','Blondel p','24, place Kl','Strasbourg',NULL,'67000','France');
 INSERT INTO orders VALUES (10680,'OLDWO',1,'1997-09-24 00:00:00','1997-10-22 00:00:00','1997-09-26 00:00:00',1,'26.6100','Old World Delicatessen','2743 Bering St.','Anchorage','AK','99508','USA');
 INSERT INTO orders VALUES (10681,'GREAL',3,'1997-09-25 00:00:00','1997-10-23 00:00:00','1997-09-30 00:00:00',3,'76.1300','Great Lakes Food Market','2732 Baker Blvd.','Eugene','OR','97403','USA');
-INSERT INTO orders VALUES (10682,'ANTON',3,'1997-09-25 00:00:00','1997-10-23 00:00:00','1997-10-01 00:00:00',2,'36.1300','Antonio Moreno Taquer','Mataderos 2312','M',NULL,'05023','Mexico');
+INSERT INTO orders VALUES (10682,'ANTON',3,'1997-09-25 00:00:00','1997-10-23 00:00:00','1997-10-01 00:00:00',2,'36.1300','Antonio Moreno Taquer','Mataderos  2312','M',NULL,'05023','Mexico');
 INSERT INTO orders VALUES (10683,'DUMON',2,'1997-09-26 00:00:00','1997-10-24 00:00:00','1997-10-01 00:00:00',1,'4.4000','Du monde entier','67, rue des Cinquante Otages','Nantes',NULL,'44000','France');
 INSERT INTO orders VALUES (10684,'OTTIK',3,'1997-09-26 00:00:00','1997-10-24 00:00:00','1997-09-30 00:00:00',1,'145.6300','Ottilies K','Mehrheimerstr. 369','K',NULL,'50739','Germany');
 INSERT INTO orders VALUES (10685,'GOURL',4,'1997-09-29 00:00:00','1997-10-13 00:00:00','1997-10-03 00:00:00',2,'33.7500','Gourmet Lanchonetes','Av. Brasil, 442','Campinas','SP','04876-786','Brazil');
@@ -2821,8 +2817,8 @@ INSERT INTO orders VALUES (10703,'FOLKO',6,'1997-10-14 00:00:00','1997-11-11 00:
 INSERT INTO orders VALUES (10704,'QUEEN',6,'1997-10-14 00:00:00','1997-11-11 00:00:00','1997-11-07 00:00:00',1,'4.7800','Queen Cozinha','Alameda dos Can','S','SP','05487-020','Brazil');
 INSERT INTO orders VALUES (10705,'HILAA',9,'1997-10-15 00:00:00','1997-11-12 00:00:00','1997-11-18 00:00:00',2,'3.5200','HILARI','Carrera 22 con Ave. Carlos Soublette #8-35','San Crist','T','5022','Venezuela');
 INSERT INTO orders VALUES (10706,'OLDWO',8,'1997-10-16 00:00:00','1997-11-13 00:00:00','1997-10-21 00:00:00',3,'135.6300','Old World Delicatessen','2743 Bering St.','Anchorage','AK','99508','USA');
-INSERT INTO orders VALUES (10707,'AROUT',4,'1997-10-16 00:00:00','1997-10-30 00:00:00','1997-10-23 00:00:00',3,'21.7400','Around the Horn','Brook Farm Stratford St. Mary','Colchester','Essex','CO7 6JX','UK');
-INSERT INTO orders VALUES (10708,'THEBI',6,'1997-10-17 00:00:00','1997-11-28 00:00:00','1997-11-05 00:00:00',2,'2.9600','The Big Cheese','89 Jefferson Way Suite 2','Portland','OR','97201','USA');
+INSERT INTO orders VALUES (10707,'AROUT',4,'1997-10-16 00:00:00','1997-10-30 00:00:00','1997-10-23 00:00:00',3,'21.7400','Around the Horn','Brook Farm\r\nStratford St. Mary','Colchester','Essex','CO7 6JX','UK');
+INSERT INTO orders VALUES (10708,'THEBI',6,'1997-10-17 00:00:00','1997-11-28 00:00:00','1997-11-05 00:00:00',2,'2.9600','The Big Cheese','89 Jefferson Way\r\nSuite 2','Portland','OR','97201','USA');
 INSERT INTO orders VALUES (10709,'GOURL',1,'1997-10-17 00:00:00','1997-11-14 00:00:00','1997-11-20 00:00:00',3,'210.8000','Gourmet Lanchonetes','Av. Brasil, 442','Campinas','SP','04876-786','Brazil');
 INSERT INTO orders VALUES (10710,'FRANS',1,'1997-10-20 00:00:00','1997-11-17 00:00:00','1997-10-23 00:00:00',1,'4.9800','Franchi S.p.A.','Via Monte Bianco 34','Torino',NULL,'10100','Italy');
 INSERT INTO orders VALUES (10711,'SAVEA',5,'1997-10-21 00:00:00','1997-12-02 00:00:00','1997-10-29 00:00:00',2,'52.4100','Save-a-lot Markets','187 Suffolk Ln.','Boise','ID','83720','USA');
@@ -2833,7 +2829,7 @@ INSERT INTO orders VALUES (10715,'BONAP',3,'1997-10-23 00:00:00','1997-11-06 00:
 INSERT INTO orders VALUES (10716,'RANCH',4,'1997-10-24 00:00:00','1997-11-21 00:00:00','1997-10-27 00:00:00',2,'22.5700','Rancho grande','Av. del Libertador 900','Buenos Aires',NULL,'1010','Argentina');
 INSERT INTO orders VALUES (10717,'FRANK',1,'1997-10-24 00:00:00','1997-11-21 00:00:00','1997-10-29 00:00:00',2,'59.2500','Frankenversand','Berliner Platz 43','M',NULL,'80805','Germany');
 INSERT INTO orders VALUES (10718,'KOENE',1,'1997-10-27 00:00:00','1997-11-24 00:00:00','1997-10-29 00:00:00',3,'170.8800','K','Maubelstr. 90','Brandenburg',NULL,'14776','Germany');
-INSERT INTO orders VALUES (10719,'LETSS',8,'1997-10-27 00:00:00','1997-11-24 00:00:00','1997-11-05 00:00:00',2,'51.4400','Let''s Stop N Shop','87 Polk St. Suite 5','San Francisco','CA','94117','USA');
+INSERT INTO orders VALUES (10719,'LETSS',8,'1997-10-27 00:00:00','1997-11-24 00:00:00','1997-11-05 00:00:00',2,'51.4400','Let''s Stop N Shop','87 Polk St.\r\nSuite 5','San Francisco','CA','94117','USA');
 INSERT INTO orders VALUES (10720,'QUEDE',8,'1997-10-28 00:00:00','1997-11-11 00:00:00','1997-11-05 00:00:00',2,'9.5300','Que Del','Rua da Panificadora, 12','Rio de Janeiro','RJ','02389-673','Brazil');
 INSERT INTO orders VALUES (10721,'QUICK',5,'1997-10-29 00:00:00','1997-11-26 00:00:00','1997-10-31 00:00:00',3,'48.9200','QUICK-Stop','Taucherstra','Cunewalde',NULL,'01307','Germany');
 INSERT INTO orders VALUES (10722,'SAVEA',8,'1997-10-29 00:00:00','1997-12-10 00:00:00','1997-11-04 00:00:00',1,'74.5800','Save-a-lot Markets','187 Suffolk Ln.','Boise','ID','83720','USA');
@@ -2849,24 +2845,24 @@ INSERT INTO orders VALUES (10731,'CHOPS',7,'1997-11-06 00:00:00','1997-12-04 00:
 INSERT INTO orders VALUES (10732,'BONAP',3,'1997-11-06 00:00:00','1997-12-04 00:00:00','1997-11-07 00:00:00',1,'16.9700','Bon app''','12, rue des Bouchers','Marseille',NULL,'13008','France');
 INSERT INTO orders VALUES (10733,'BERGS',1,'1997-11-07 00:00:00','1997-12-05 00:00:00','1997-11-10 00:00:00',3,'110.1100','Berglunds snabbk','Berguvsv','Lule',NULL,'S-958 22','Sweden');
 INSERT INTO orders VALUES (10734,'GOURL',2,'1997-11-07 00:00:00','1997-12-05 00:00:00','1997-11-12 00:00:00',3,'1.6300','Gourmet Lanchonetes','Av. Brasil, 442','Campinas','SP','04876-786','Brazil');
-INSERT INTO orders VALUES (10735,'LETSS',6,'1997-11-10 00:00:00','1997-12-08 00:00:00','1997-11-21 00:00:00',2,'45.9700','Let''s Stop N Shop','87 Polk St. Suite 5','San Francisco','CA','94117','USA');
+INSERT INTO orders VALUES (10735,'LETSS',6,'1997-11-10 00:00:00','1997-12-08 00:00:00','1997-11-21 00:00:00',2,'45.9700','Let''s Stop N Shop','87 Polk St.\r\nSuite 5','San Francisco','CA','94117','USA');
 INSERT INTO orders VALUES (10736,'HUNGO',9,'1997-11-11 00:00:00','1997-12-09 00:00:00','1997-11-21 00:00:00',2,'44.1000','Hungry Owl All-Night Grocers','8 Johnstown Road','Cork','Co. Cork',NULL,'Ireland');
 INSERT INTO orders VALUES (10737,'VINET',2,'1997-11-11 00:00:00','1997-12-09 00:00:00','1997-11-18 00:00:00',2,'7.7900','Vins et alcools Chevalier','59 rue de l''Abbaye','Reims',NULL,'51100','France');
 INSERT INTO orders VALUES (10738,'SPECD',2,'1997-11-12 00:00:00','1997-12-10 00:00:00','1997-11-18 00:00:00',1,'2.9100','Sp','25, rue Lauriston','Paris',NULL,'75016','France');
 INSERT INTO orders VALUES (10739,'VINET',3,'1997-11-12 00:00:00','1997-12-10 00:00:00','1997-11-17 00:00:00',3,'11.0800','Vins et alcools Chevalier','59 rue de l''Abbaye','Reims',NULL,'51100','France');
 INSERT INTO orders VALUES (10740,'WHITC',4,'1997-11-13 00:00:00','1997-12-11 00:00:00','1997-11-25 00:00:00',2,'81.8800','White Clover Markets','1029 - 12th Ave. S.','Seattle','WA','98124','USA');
-INSERT INTO orders VALUES (10741,'AROUT',4,'1997-11-14 00:00:00','1997-11-28 00:00:00','1997-11-18 00:00:00',3,'10.9600','Around the Horn','Brook Farm Stratford St. Mary','Colchester','Essex','CO7 6JX','UK');
+INSERT INTO orders VALUES (10741,'AROUT',4,'1997-11-14 00:00:00','1997-11-28 00:00:00','1997-11-18 00:00:00',3,'10.9600','Around the Horn','Brook Farm\r\nStratford St. Mary','Colchester','Essex','CO7 6JX','UK');
 INSERT INTO orders VALUES (10742,'BOTTM',3,'1997-11-14 00:00:00','1997-12-12 00:00:00','1997-11-18 00:00:00',3,'243.7300','Bottom-Dollar Markets','23 Tsawassen Blvd.','Tsawassen','BC','T2F 8M4','Canada');
-INSERT INTO orders VALUES (10743,'AROUT',1,'1997-11-17 00:00:00','1997-12-15 00:00:00','1997-11-21 00:00:00',2,'23.7200','Around the Horn','Brook Farm Stratford St. Mary','Colchester','Essex','CO7 6JX','UK');
+INSERT INTO orders VALUES (10743,'AROUT',1,'1997-11-17 00:00:00','1997-12-15 00:00:00','1997-11-21 00:00:00',2,'23.7200','Around the Horn','Brook Farm\r\nStratford St. Mary','Colchester','Essex','CO7 6JX','UK');
 INSERT INTO orders VALUES (10744,'VAFFE',6,'1997-11-17 00:00:00','1997-12-15 00:00:00','1997-11-24 00:00:00',1,'69.1900','Vaffeljernet','Smagsl','',NULL,'8200','Denmark');
 INSERT INTO orders VALUES (10745,'QUICK',9,'1997-11-18 00:00:00','1997-12-16 00:00:00','1997-11-27 00:00:00',1,'3.5200','QUICK-Stop','Taucherstra','Cunewalde',NULL,'01307','Germany');
 INSERT INTO orders VALUES (10746,'CHOPS',1,'1997-11-19 00:00:00','1997-12-17 00:00:00','1997-11-21 00:00:00',3,'31.4300','Chop-suey Chinese','Hauptstr. 31','Bern',NULL,'3012','Switzerland');
 INSERT INTO orders VALUES (10747,'PICCO',6,'1997-11-19 00:00:00','1997-12-17 00:00:00','1997-11-26 00:00:00',1,'117.3300','Piccolo und mehr','Geislweg 14','Salzburg',NULL,'5020','Austria');
 INSERT INTO orders VALUES (10748,'SAVEA',3,'1997-11-20 00:00:00','1997-12-18 00:00:00','1997-11-28 00:00:00',1,'232.5500','Save-a-lot Markets','187 Suffolk Ln.','Boise','ID','83720','USA');
-INSERT INTO orders VALUES (10749,'ISLAT',4,'1997-11-20 00:00:00','1997-12-18 00:00:00','1997-12-19 00:00:00',2,'61.5300','Island Trading','Garden House Crowther Way','Cowes','Isle of Wight','PO31 7PJ','UK');
+INSERT INTO orders VALUES (10749,'ISLAT',4,'1997-11-20 00:00:00','1997-12-18 00:00:00','1997-12-19 00:00:00',2,'61.5300','Island Trading','Garden House\r\nCrowther Way','Cowes','Isle of Wight','PO31 7PJ','UK');
 INSERT INTO orders VALUES (10750,'WARTH',9,'1997-11-21 00:00:00','1997-12-19 00:00:00','1997-11-24 00:00:00',1,'79.3000','Wartian Herkku','Torikatu 38','Oulu',NULL,'90110','Finland');
 INSERT INTO orders VALUES (10751,'RICSU',3,'1997-11-24 00:00:00','1997-12-22 00:00:00','1997-12-03 00:00:00',3,'130.7900','Richter Supermarkt','Starenweg 5','Gen',NULL,'1204','Switzerland');
-INSERT INTO orders VALUES (10752,'NORTS',2,'1997-11-24 00:00:00','1997-12-22 00:00:00','1997-11-28 00:00:00',3,'1.3900','North/South','South House 300 Queensbridge','London',NULL,'SW7 1RZ','UK');
+INSERT INTO orders VALUES (10752,'NORTS',2,'1997-11-24 00:00:00','1997-12-22 00:00:00','1997-11-28 00:00:00',3,'1.3900','North/South','South House\r\n300 Queensbridge','London',NULL,'SW7 1RZ','UK');
 INSERT INTO orders VALUES (10753,'FRANS',3,'1997-11-25 00:00:00','1997-12-23 00:00:00','1997-11-27 00:00:00',1,'7.7000','Franchi S.p.A.','Via Monte Bianco 34','Torino',NULL,'10100','Italy');
 INSERT INTO orders VALUES (10754,'MAGAA',6,'1997-11-25 00:00:00','1997-12-23 00:00:00','1997-11-27 00:00:00',3,'2.3800','Magazzini Alimentari Riuniti','Via Ludovico il Moro 22','Bergamo',NULL,'24100','Italy');
 INSERT INTO orders VALUES (10755,'BONAP',4,'1997-11-26 00:00:00','1997-12-24 00:00:00','1997-11-28 00:00:00',2,'16.7100','Bon app''','12, rue des Bouchers','Marseille',NULL,'13008','France');
@@ -2882,7 +2878,7 @@ INSERT INTO orders VALUES (10764,'ERNSH',6,'1997-12-03 00:00:00','1997-12-31 00:
 INSERT INTO orders VALUES (10765,'QUICK',3,'1997-12-04 00:00:00','1998-01-01 00:00:00','1997-12-09 00:00:00',3,'42.7400','QUICK-Stop','Taucherstra','Cunewalde',NULL,'01307','Germany');
 INSERT INTO orders VALUES (10766,'OTTIK',4,'1997-12-05 00:00:00','1998-01-02 00:00:00','1997-12-09 00:00:00',1,'157.5500','Ottilies K','Mehrheimerstr. 369','K',NULL,'50739','Germany');
 INSERT INTO orders VALUES (10767,'SUPRD',4,'1997-12-05 00:00:00','1998-01-02 00:00:00','1997-12-15 00:00:00',3,'1.5900','Supr','Boulevard Tirou, 255','Charleroi',NULL,'B-6000','Belgium');
-INSERT INTO orders VALUES (10768,'AROUT',3,'1997-12-08 00:00:00','1998-01-05 00:00:00','1997-12-15 00:00:00',2,'146.3200','Around the Horn','Brook Farm Stratford St. Mary','Colchester','Essex','CO7 6JX','UK');
+INSERT INTO orders VALUES (10768,'AROUT',3,'1997-12-08 00:00:00','1998-01-05 00:00:00','1997-12-15 00:00:00',2,'146.3200','Around the Horn','Brook Farm\r\nStratford St. Mary','Colchester','Essex','CO7 6JX','UK');
 INSERT INTO orders VALUES (10769,'VAFFE',3,'1997-12-08 00:00:00','1998-01-05 00:00:00','1997-12-12 00:00:00',1,'65.0600','Vaffeljernet','Smagsl','',NULL,'8200','Denmark');
 INSERT INTO orders VALUES (10770,'HANAR',8,'1997-12-09 00:00:00','1998-01-06 00:00:00','1997-12-17 00:00:00',3,'5.3200','Hanari Carnes','Rua do Pa','Rio de Janeiro','RJ','05454-876','Brazil');
 INSERT INTO orders VALUES (10771,'ERNSH',9,'1997-12-10 00:00:00','1998-01-07 00:00:00','1998-01-02 00:00:00',2,'11.1900','Ernst Handel','Kirchgasse 6','Graz',NULL,'8010','Austria');
@@ -2907,19 +2903,19 @@ INSERT INTO orders VALUES (10789,'FOLIG',1,'1997-12-22 00:00:00','1998-01-19 00:
 INSERT INTO orders VALUES (10790,'GOURL',6,'1997-12-22 00:00:00','1998-01-19 00:00:00','1997-12-26 00:00:00',1,'28.2300','Gourmet Lanchonetes','Av. Brasil, 442','Campinas','SP','04876-786','Brazil');
 INSERT INTO orders VALUES (10791,'FRANK',6,'1997-12-23 00:00:00','1998-01-20 00:00:00','1998-01-01 00:00:00',2,'16.8500','Frankenversand','Berliner Platz 43','M',NULL,'80805','Germany');
 INSERT INTO orders VALUES (10792,'WOLZA',1,'1997-12-23 00:00:00','1998-01-20 00:00:00','1997-12-31 00:00:00',3,'23.7900','Wolski Zajazd','ul. Filtrowa 68','Warszawa',NULL,'01-012','Poland');
-INSERT INTO orders VALUES (10793,'AROUT',3,'1997-12-24 00:00:00','1998-01-21 00:00:00','1998-01-08 00:00:00',3,'4.5200','Around the Horn','Brook Farm Stratford St. Mary','Colchester','Essex','CO7 6JX','UK');
+INSERT INTO orders VALUES (10793,'AROUT',3,'1997-12-24 00:00:00','1998-01-21 00:00:00','1998-01-08 00:00:00',3,'4.5200','Around the Horn','Brook Farm\r\nStratford St. Mary','Colchester','Essex','CO7 6JX','UK');
 INSERT INTO orders VALUES (10794,'QUEDE',6,'1997-12-24 00:00:00','1998-01-21 00:00:00','1998-01-02 00:00:00',1,'21.4900','Que Del','Rua da Panificadora, 12','Rio de Janeiro','RJ','02389-673','Brazil');
 INSERT INTO orders VALUES (10795,'ERNSH',8,'1997-12-24 00:00:00','1998-01-21 00:00:00','1998-01-20 00:00:00',2,'126.6600','Ernst Handel','Kirchgasse 6','Graz',NULL,'8010','Austria');
 INSERT INTO orders VALUES (10796,'HILAA',3,'1997-12-25 00:00:00','1998-01-22 00:00:00','1998-01-14 00:00:00',1,'26.5200','HILARI','Carrera 22 con Ave. Carlos Soublette #8-35','San Crist','T','5022','Venezuela');
 INSERT INTO orders VALUES (10797,'DRACD',7,'1997-12-25 00:00:00','1998-01-22 00:00:00','1998-01-05 00:00:00',2,'33.3500','Drachenblut Delikatessen','Walserweg 21','Aachen',NULL,'52066','Germany');
-INSERT INTO orders VALUES (10798,'ISLAT',2,'1997-12-26 00:00:00','1998-01-23 00:00:00','1998-01-05 00:00:00',1,'2.3300','Island Trading','Garden House Crowther Way','Cowes','Isle of Wight','PO31 7PJ','UK');
+INSERT INTO orders VALUES (10798,'ISLAT',2,'1997-12-26 00:00:00','1998-01-23 00:00:00','1998-01-05 00:00:00',1,'2.3300','Island Trading','Garden House\r\nCrowther Way','Cowes','Isle of Wight','PO31 7PJ','UK');
 INSERT INTO orders VALUES (10799,'KOENE',9,'1997-12-26 00:00:00','1998-02-06 00:00:00','1998-01-05 00:00:00',3,'30.7600','K','Maubelstr. 90','Brandenburg',NULL,'14776','Germany');
 INSERT INTO orders VALUES (10800,'SEVES',1,'1997-12-26 00:00:00','1998-01-23 00:00:00','1998-01-05 00:00:00',3,'137.4400','Seven Seas Imports','90 Wadhurst Rd.','London',NULL,'OX15 4NB','UK');
 INSERT INTO orders VALUES (10801,'BOLID',4,'1997-12-29 00:00:00','1998-01-26 00:00:00','1997-12-31 00:00:00',2,'97.0900','B','C/ Araquil, 67','Madrid',NULL,'28023','Spain');
 INSERT INTO orders VALUES (10802,'SIMOB',4,'1997-12-29 00:00:00','1998-01-26 00:00:00','1998-01-02 00:00:00',2,'257.2600','Simons bistro','Vinb','K',NULL,'1734','Denmark');
 INSERT INTO orders VALUES (10803,'WELLI',4,'1997-12-30 00:00:00','1998-01-27 00:00:00','1998-01-06 00:00:00',1,'55.2300','Wellington Importadora','Rua do Mercado, 12','Resende','SP','08737-363','Brazil');
 INSERT INTO orders VALUES (10804,'SEVES',6,'1997-12-30 00:00:00','1998-01-27 00:00:00','1998-01-07 00:00:00',2,'27.3300','Seven Seas Imports','90 Wadhurst Rd.','London',NULL,'OX15 4NB','UK');
-INSERT INTO orders VALUES (10805,'THEBI',2,'1997-12-30 00:00:00','1998-01-27 00:00:00','1998-01-09 00:00:00',3,'237.3400','The Big Cheese','89 Jefferson Way Suite 2','Portland','OR','97201','USA');
+INSERT INTO orders VALUES (10805,'THEBI',2,'1997-12-30 00:00:00','1998-01-27 00:00:00','1998-01-09 00:00:00',3,'237.3400','The Big Cheese','89 Jefferson Way\r\nSuite 2','Portland','OR','97201','USA');
 INSERT INTO orders VALUES (10806,'VICTE',3,'1997-12-31 00:00:00','1998-01-28 00:00:00','1998-01-05 00:00:00',2,'22.1100','Victuailles en stock','2, rue du Commerce','Lyon',NULL,'69004','France');
 INSERT INTO orders VALUES (10807,'FRANS',4,'1997-12-31 00:00:00','1998-01-28 00:00:00','1998-01-30 00:00:00',1,'1.3600','Franchi S.p.A.','Via Monte Bianco 34','Torino',NULL,'10100','Italy');
 INSERT INTO orders VALUES (10808,'PRINI',2,'1998-01-01 00:00:00','1998-01-29 00:00:00','1998-01-09 00:00:00',3,'45.5300','Old World Delicatessen','2743 Bering St.','Anchorage','AK','99508','USA');
@@ -2943,7 +2939,7 @@ INSERT INTO orders VALUES (10825,'DRACD',1,'1998-01-09 00:00:00','1998-02-06 00:
 INSERT INTO orders VALUES (10826,'BLONP',6,'1998-01-12 00:00:00','1998-02-09 00:00:00','1998-02-06 00:00:00',1,'7.0900','Blondel p','24, place Kl','Strasbourg',NULL,'67000','France');
 INSERT INTO orders VALUES (10827,'BONAP',1,'1998-01-12 00:00:00','1998-01-26 00:00:00','1998-02-06 00:00:00',2,'63.5400','Bon app''','12, rue des Bouchers','Marseille',NULL,'13008','France');
 INSERT INTO orders VALUES (10828,'RANCH',9,'1998-01-13 00:00:00','1998-01-27 00:00:00','1998-02-04 00:00:00',1,'90.8500','Rancho grande','Av. del Libertador 900','Buenos Aires',NULL,'1010','Argentina');
-INSERT INTO orders VALUES (10829,'ISLAT',9,'1998-01-13 00:00:00','1998-02-10 00:00:00','1998-01-23 00:00:00',1,'154.7200','Island Trading','Garden House Crowther Way','Cowes','Isle of Wight','PO31 7PJ','UK');
+INSERT INTO orders VALUES (10829,'ISLAT',9,'1998-01-13 00:00:00','1998-02-10 00:00:00','1998-01-23 00:00:00',1,'154.7200','Island Trading','Garden House\r\nCrowther Way','Cowes','Isle of Wight','PO31 7PJ','UK');
 INSERT INTO orders VALUES (10830,'TRADH',4,'1998-01-13 00:00:00','1998-02-24 00:00:00','1998-01-21 00:00:00',2,'81.8300','Tradi','Av. In','S','SP','05634-030','Brazil');
 INSERT INTO orders VALUES (10831,'SANTG',3,'1998-01-14 00:00:00','1998-02-11 00:00:00','1998-01-23 00:00:00',2,'72.1900','Sant','Erling Skakkes gate 78','Stavern',NULL,'4110','Norway');
 INSERT INTO orders VALUES (10832,'LAMAI',2,'1998-01-14 00:00:00','1998-02-11 00:00:00','1998-01-19 00:00:00',2,'43.2600','La maison d''Asie','1 rue Alsace-Lorraine','Toulouse',NULL,'31000','France');
@@ -2962,7 +2958,7 @@ INSERT INTO orders VALUES (10844,'PICCO',8,'1998-01-21 00:00:00','1998-02-18 00:
 INSERT INTO orders VALUES (10845,'QUICK',8,'1998-01-21 00:00:00','1998-02-04 00:00:00','1998-01-30 00:00:00',1,'212.9800','QUICK-Stop','Taucherstra','Cunewalde',NULL,'01307','Germany');
 INSERT INTO orders VALUES (10846,'SUPRD',2,'1998-01-22 00:00:00','1998-03-05 00:00:00','1998-01-23 00:00:00',3,'56.4600','Supr','Boulevard Tirou, 255','Charleroi',NULL,'B-6000','Belgium');
 INSERT INTO orders VALUES (10847,'SAVEA',4,'1998-01-22 00:00:00','1998-02-05 00:00:00','1998-02-10 00:00:00',3,'487.5700','Save-a-lot Markets','187 Suffolk Ln.','Boise','ID','83720','USA');
-INSERT INTO orders VALUES (10848,'CONSH',7,'1998-01-23 00:00:00','1998-02-20 00:00:00','1998-01-29 00:00:00',2,'38.2400','Consolidated Holdings','Berkeley Gardens 12 Brewery ','London',NULL,'WX1 6LT','UK');
+INSERT INTO orders VALUES (10848,'CONSH',7,'1998-01-23 00:00:00','1998-02-20 00:00:00','1998-01-29 00:00:00',2,'38.2400','Consolidated Holdings','Berkeley Gardens\r\n12  Brewery ','London',NULL,'WX1 6LT','UK');
 INSERT INTO orders VALUES (10849,'KOENE',9,'1998-01-23 00:00:00','1998-02-20 00:00:00','1998-01-30 00:00:00',2,'0.5600','K','Maubelstr. 90','Brandenburg',NULL,'14776','Germany');
 INSERT INTO orders VALUES (10850,'VICTE',1,'1998-01-23 00:00:00','1998-03-06 00:00:00','1998-01-30 00:00:00',1,'49.1900','Victuailles en stock','2, rue du Commerce','Lyon',NULL,'69004','France');
 INSERT INTO orders VALUES (10851,'RICAR',5,'1998-01-26 00:00:00','1998-02-23 00:00:00','1998-02-02 00:00:00',1,'160.5500','Ricardo Adocicados','Av. Copacabana, 267','Rio de Janeiro','RJ','02389-890','Brazil');
@@ -2970,7 +2966,7 @@ INSERT INTO orders VALUES (10852,'RATTC',8,'1998-01-26 00:00:00','1998-02-09 00:
 INSERT INTO orders VALUES (10853,'BLAUS',9,'1998-01-27 00:00:00','1998-02-24 00:00:00','1998-02-03 00:00:00',2,'53.8300','Blauer See Delikatessen','Forsterstr. 57','Mannheim',NULL,'68306','Germany');
 INSERT INTO orders VALUES (10854,'ERNSH',3,'1998-01-27 00:00:00','1998-02-24 00:00:00','1998-02-05 00:00:00',2,'100.2200','Ernst Handel','Kirchgasse 6','Graz',NULL,'8010','Austria');
 INSERT INTO orders VALUES (10855,'OLDWO',3,'1998-01-27 00:00:00','1998-02-24 00:00:00','1998-02-04 00:00:00',1,'170.9700','Old World Delicatessen','2743 Bering St.','Anchorage','AK','99508','USA');
-INSERT INTO orders VALUES (10856,'ANTON',3,'1998-01-28 00:00:00','1998-02-25 00:00:00','1998-02-10 00:00:00',2,'58.4300','Antonio Moreno Taquer','Mataderos 2312','M',NULL,'05023','Mexico');
+INSERT INTO orders VALUES (10856,'ANTON',3,'1998-01-28 00:00:00','1998-02-25 00:00:00','1998-02-10 00:00:00',2,'58.4300','Antonio Moreno Taquer','Mataderos  2312','M',NULL,'05023','Mexico');
 INSERT INTO orders VALUES (10857,'BERGS',8,'1998-01-28 00:00:00','1998-02-25 00:00:00','1998-02-06 00:00:00',2,'188.8500','Berglunds snabbk','Berguvsv','Lule',NULL,'S-958 22','Sweden');
 INSERT INTO orders VALUES (10858,'LACOR',2,'1998-01-29 00:00:00','1998-02-26 00:00:00','1998-02-03 00:00:00',1,'52.5100','La corne d''abondance','67, avenue de l''Europe','Versailles',NULL,'78000','France');
 INSERT INTO orders VALUES (10859,'FRANK',1,'1998-01-29 00:00:00','1998-02-26 00:00:00','1998-02-02 00:00:00',2,'76.1000','Frankenversand','Berliner Platz 43','M',NULL,'80805','Germany');
@@ -2978,7 +2974,7 @@ INSERT INTO orders VALUES (10860,'FRANR',3,'1998-01-29 00:00:00','1998-02-26 00:
 INSERT INTO orders VALUES (10861,'WHITC',4,'1998-01-30 00:00:00','1998-02-27 00:00:00','1998-02-17 00:00:00',2,'14.9300','White Clover Markets','1029 - 12th Ave. S.','Seattle','WA','98124','USA');
 INSERT INTO orders VALUES (10862,'LEHMS',8,'1998-01-30 00:00:00','1998-03-13 00:00:00','1998-02-02 00:00:00',2,'53.2300','Lehmanns Marktstand','Magazinweg 7','Frankfurt a.M. ',NULL,'60528','Germany');
 INSERT INTO orders VALUES (10863,'HILAA',4,'1998-02-02 00:00:00','1998-03-02 00:00:00','1998-02-17 00:00:00',2,'30.2600','HILARI','Carrera 22 con Ave. Carlos Soublette #8-35','San Crist','T','5022','Venezuela');
-INSERT INTO orders VALUES (10864,'AROUT',4,'1998-02-02 00:00:00','1998-03-02 00:00:00','1998-02-09 00:00:00',2,'3.0400','Around the Horn','Brook Farm Stratford St. Mary','Colchester','Essex','CO7 6JX','UK');
+INSERT INTO orders VALUES (10864,'AROUT',4,'1998-02-02 00:00:00','1998-03-02 00:00:00','1998-02-09 00:00:00',2,'3.0400','Around the Horn','Brook Farm\r\nStratford St. Mary','Colchester','Essex','CO7 6JX','UK');
 INSERT INTO orders VALUES (10865,'QUICK',2,'1998-02-02 00:00:00','1998-02-16 00:00:00','1998-02-12 00:00:00',1,'348.1400','QUICK-Stop','Taucherstra','Cunewalde',NULL,'01307','Germany');
 INSERT INTO orders VALUES (10866,'BERGS',5,'1998-02-03 00:00:00','1998-03-03 00:00:00','1998-02-12 00:00:00',1,'109.1100','Berglunds snabbk','Berguvsv','Lule',NULL,'S-958 22','Sweden');
 INSERT INTO orders VALUES (10867,'LONEP',6,'1998-02-03 00:00:00','1998-03-17 00:00:00','1998-02-11 00:00:00',1,'1.9300','Lonesome Pine Restaurant','89 Chiaroscuro Rd.','Portland','OR','97219','USA');
@@ -2998,7 +2994,7 @@ INSERT INTO orders VALUES (10880,'FOLKO',7,'1998-02-10 00:00:00','1998-03-24 00:
 INSERT INTO orders VALUES (10881,'CACTU',4,'1998-02-11 00:00:00','1998-03-11 00:00:00','1998-02-18 00:00:00',1,'2.8400','Cactus Comidas para llevar','Cerrito 333','Buenos Aires',NULL,'1010','Argentina');
 INSERT INTO orders VALUES (10882,'SAVEA',4,'1998-02-11 00:00:00','1998-03-11 00:00:00','1998-02-20 00:00:00',3,'23.1000','Save-a-lot Markets','187 Suffolk Ln.','Boise','ID','83720','USA');
 INSERT INTO orders VALUES (10883,'LONEP',8,'1998-02-12 00:00:00','1998-03-12 00:00:00','1998-02-20 00:00:00',3,'0.5300','Lonesome Pine Restaurant','89 Chiaroscuro Rd.','Portland','OR','97219','USA');
-INSERT INTO orders VALUES (10884,'LETSS',4,'1998-02-12 00:00:00','1998-03-12 00:00:00','1998-02-13 00:00:00',2,'90.9700','Let''s Stop N Shop','87 Polk St. Suite 5','San Francisco','CA','94117','USA');
+INSERT INTO orders VALUES (10884,'LETSS',4,'1998-02-12 00:00:00','1998-03-12 00:00:00','1998-02-13 00:00:00',2,'90.9700','Let''s Stop N Shop','87 Polk St.\r\nSuite 5','San Francisco','CA','94117','USA');
 INSERT INTO orders VALUES (10885,'SUPRD',6,'1998-02-12 00:00:00','1998-03-12 00:00:00','1998-02-18 00:00:00',3,'5.6400','Supr','Boulevard Tirou, 255','Charleroi',NULL,'B-6000','Belgium');
 INSERT INTO orders VALUES (10886,'HANAR',1,'1998-02-13 00:00:00','1998-03-13 00:00:00','1998-03-02 00:00:00',1,'4.9900','Hanari Carnes','Rua do Pa','Rio de Janeiro','RJ','05454-876','Brazil');
 INSERT INTO orders VALUES (10887,'GALED',8,'1998-02-13 00:00:00','1998-03-13 00:00:00','1998-02-16 00:00:00',3,'1.2500','Galer','Rambla de Catalu','Barcelona',NULL,'8022','Spain');
@@ -3012,7 +3008,7 @@ INSERT INTO orders VALUES (10894,'SAVEA',1,'1998-02-18 00:00:00','1998-03-18 00:
 INSERT INTO orders VALUES (10895,'ERNSH',3,'1998-02-18 00:00:00','1998-03-18 00:00:00','1998-02-23 00:00:00',1,'162.7500','Ernst Handel','Kirchgasse 6','Graz',NULL,'8010','Austria');
 INSERT INTO orders VALUES (10896,'MAISD',7,'1998-02-19 00:00:00','1998-03-19 00:00:00','1998-02-27 00:00:00',3,'32.4500','Maison Dewey','Rue Joseph-Bens 532','Bruxelles',NULL,'B-1180','Belgium');
 INSERT INTO orders VALUES (10897,'HUNGO',3,'1998-02-19 00:00:00','1998-03-19 00:00:00','1998-02-25 00:00:00',2,'603.5400','Hungry Owl All-Night Grocers','8 Johnstown Road','Cork','Co. Cork',NULL,'Ireland');
-INSERT INTO orders VALUES (10898,'OCEAN',4,'1998-02-20 00:00:00','1998-03-20 00:00:00','1998-03-06 00:00:00',2,'1.2700','Oc','Ing. Gustavo Moncada 8585 Piso 20-A','Buenos Aires',NULL,'1010','Argentina');
+INSERT INTO orders VALUES (10898,'OCEAN',4,'1998-02-20 00:00:00','1998-03-20 00:00:00','1998-03-06 00:00:00',2,'1.2700','Oc','Ing. Gustavo Moncada 8585\r\nPiso 20-A','Buenos Aires',NULL,'1010','Argentina');
 INSERT INTO orders VALUES (10899,'LILAS',5,'1998-02-20 00:00:00','1998-03-20 00:00:00','1998-02-26 00:00:00',3,'1.2100','LILA-Supermercado','Carrera 52 con Ave. Bol','Barquisimeto','Lara','3508','Venezuela');
 INSERT INTO orders VALUES (10900,'WELLI',1,'1998-02-20 00:00:00','1998-03-20 00:00:00','1998-03-04 00:00:00',2,'1.6600','Wellington Importadora','Rua do Mercado, 12','Resende','SP','08737-363','Brazil');
 INSERT INTO orders VALUES (10901,'HILAA',4,'1998-02-23 00:00:00','1998-03-23 00:00:00','1998-02-26 00:00:00',1,'62.0900','HILARI','Carrera 22 con Ave. Carlos Soublette #8-35','San Crist','T','5022','Venezuela');
@@ -3034,7 +3030,7 @@ INSERT INTO orders VALUES (10916,'RANCH',1,'1998-02-27 00:00:00','1998-03-27 00:
 INSERT INTO orders VALUES (10917,'ROMEY',4,'1998-03-02 00:00:00','1998-03-30 00:00:00','1998-03-11 00:00:00',2,'8.2900','Romero y tomillo','Gran V','Madrid',NULL,'28001','Spain');
 INSERT INTO orders VALUES (10918,'BOTTM',3,'1998-03-02 00:00:00','1998-03-30 00:00:00','1998-03-11 00:00:00',3,'48.8300','Bottom-Dollar Markets','23 Tsawassen Blvd.','Tsawassen','BC','T2F 8M4','Canada');
 INSERT INTO orders VALUES (10919,'LINOD',2,'1998-03-02 00:00:00','1998-03-30 00:00:00','1998-03-04 00:00:00',2,'19.8000','LINO-Delicateses','Ave. 5 de Mayo Porlamar','I. de Margarita','Nueva Esparta','4980','Venezuela');
-INSERT INTO orders VALUES (10920,'AROUT',4,'1998-03-03 00:00:00','1998-03-31 00:00:00','1998-03-09 00:00:00',2,'29.6100','Around the Horn','Brook Farm Stratford St. Mary','Colchester','Essex','CO7 6JX','UK');
+INSERT INTO orders VALUES (10920,'AROUT',4,'1998-03-03 00:00:00','1998-03-31 00:00:00','1998-03-09 00:00:00',2,'29.6100','Around the Horn','Brook Farm\r\nStratford St. Mary','Colchester','Essex','CO7 6JX','UK');
 INSERT INTO orders VALUES (10921,'VAFFE',1,'1998-03-03 00:00:00','1998-04-14 00:00:00','1998-03-09 00:00:00',1,'176.4800','Vaffeljernet','Smagsl','',NULL,'8200','Denmark');
 INSERT INTO orders VALUES (10922,'HANAR',5,'1998-03-03 00:00:00','1998-03-31 00:00:00','1998-03-05 00:00:00',3,'62.7400','Hanari Carnes','Rua do Pa','Rio de Janeiro','RJ','05454-876','Brazil');
 INSERT INTO orders VALUES (10923,'LAMAI',7,'1998-03-03 00:00:00','1998-04-14 00:00:00','1998-03-13 00:00:00',3,'68.2600','La maison d''Asie','1 rue Alsace-Lorraine','Toulouse',NULL,'31000','France');
@@ -3047,7 +3043,7 @@ INSERT INTO orders VALUES (10929,'FRANK',6,'1998-03-05 00:00:00','1998-04-02 00:
 INSERT INTO orders VALUES (10930,'SUPRD',4,'1998-03-06 00:00:00','1998-04-17 00:00:00','1998-03-18 00:00:00',3,'15.5500','Supr','Boulevard Tirou, 255','Charleroi',NULL,'B-6000','Belgium');
 INSERT INTO orders VALUES (10931,'RICSU',4,'1998-03-06 00:00:00','1998-03-20 00:00:00','1998-03-19 00:00:00',2,'13.6000','Richter Supermarkt','Starenweg 5','Gen',NULL,'1204','Switzerland');
 INSERT INTO orders VALUES (10932,'BONAP',8,'1998-03-06 00:00:00','1998-04-03 00:00:00','1998-03-24 00:00:00',1,'134.6400','Bon app''','12, rue des Bouchers','Marseille',NULL,'13008','France');
-INSERT INTO orders VALUES (10933,'ISLAT',6,'1998-03-06 00:00:00','1998-04-03 00:00:00','1998-03-16 00:00:00',3,'54.1500','Island Trading','Garden House Crowther Way','Cowes','Isle of Wight','PO31 7PJ','UK');
+INSERT INTO orders VALUES (10933,'ISLAT',6,'1998-03-06 00:00:00','1998-04-03 00:00:00','1998-03-16 00:00:00',3,'54.1500','Island Trading','Garden House\r\nCrowther Way','Cowes','Isle of Wight','PO31 7PJ','UK');
 INSERT INTO orders VALUES (10934,'LEHMS',3,'1998-03-09 00:00:00','1998-04-06 00:00:00','1998-03-12 00:00:00',3,'32.0100','Lehmanns Marktstand','Magazinweg 7','Frankfurt a.M. ',NULL,'60528','Germany');
 INSERT INTO orders VALUES (10935,'WELLI',4,'1998-03-09 00:00:00','1998-04-06 00:00:00','1998-03-18 00:00:00',3,'47.5900','Wellington Importadora','Rua do Mercado, 12','Resende','SP','08737-363','Brazil');
 INSERT INTO orders VALUES (10936,'GREAL',3,'1998-03-09 00:00:00','1998-04-06 00:00:00','1998-03-18 00:00:00',2,'33.6800','Great Lakes Food Market','2732 Baker Blvd.','Eugene','OR','97403','USA');
@@ -3067,12 +3063,12 @@ INSERT INTO orders VALUES (10949,'BOTTM',2,'1998-03-13 00:00:00','1998-04-10 00:
 INSERT INTO orders VALUES (10950,'MAGAA',1,'1998-03-16 00:00:00','1998-04-13 00:00:00','1998-03-23 00:00:00',2,'2.5000','Magazzini Alimentari Riuniti','Via Ludovico il Moro 22','Bergamo',NULL,'24100','Italy');
 INSERT INTO orders VALUES (10951,'RICSU',9,'1998-03-16 00:00:00','1998-04-27 00:00:00','1998-04-07 00:00:00',2,'30.8500','Richter Supermarkt','Starenweg 5','Gen',NULL,'1204','Switzerland');
 INSERT INTO orders VALUES (10952,'ALFKI',1,'1998-03-16 00:00:00','1998-04-27 00:00:00','1998-03-24 00:00:00',1,'40.4200','Alfreds Futterkiste','Obere Str. 57','Berlin',NULL,'12209','Germany');
-INSERT INTO orders VALUES (10953,'AROUT',9,'1998-03-16 00:00:00','1998-03-30 00:00:00','1998-03-25 00:00:00',2,'23.7200','Around the Horn','Brook Farm Stratford St. Mary','Colchester','Essex','CO7 6JX','UK');
+INSERT INTO orders VALUES (10953,'AROUT',9,'1998-03-16 00:00:00','1998-03-30 00:00:00','1998-03-25 00:00:00',2,'23.7200','Around the Horn','Brook Farm\r\nStratford St. Mary','Colchester','Essex','CO7 6JX','UK');
 INSERT INTO orders VALUES (10954,'LINOD',5,'1998-03-17 00:00:00','1998-04-28 00:00:00','1998-03-20 00:00:00',1,'27.9100','LINO-Delicateses','Ave. 5 de Mayo Porlamar','I. de Margarita','Nueva Esparta','4980','Venezuela');
 INSERT INTO orders VALUES (10955,'FOLKO',8,'1998-03-17 00:00:00','1998-04-14 00:00:00','1998-03-20 00:00:00',2,'3.2600','Folk och f','','Br',NULL,'S-844 67','Sweden');
 INSERT INTO orders VALUES (10956,'BLAUS',6,'1998-03-17 00:00:00','1998-04-28 00:00:00','1998-03-20 00:00:00',2,'44.6500','Blauer See Delikatessen','Forsterstr. 57','Mannheim',NULL,'68306','Germany');
 INSERT INTO orders VALUES (10957,'HILAA',8,'1998-03-18 00:00:00','1998-04-15 00:00:00','1998-03-27 00:00:00',3,'105.3600','HILARI','Carrera 22 con Ave. Carlos Soublette #8-35','San Crist','T','5022','Venezuela');
-INSERT INTO orders VALUES (10958,'OCEAN',7,'1998-03-18 00:00:00','1998-04-15 00:00:00','1998-03-27 00:00:00',2,'49.5600','Oc','Ing. Gustavo Moncada 8585 Piso 20-A','Buenos Aires',NULL,'1010','Argentina');
+INSERT INTO orders VALUES (10958,'OCEAN',7,'1998-03-18 00:00:00','1998-04-15 00:00:00','1998-03-27 00:00:00',2,'49.5600','Oc','Ing. Gustavo Moncada 8585\r\nPiso 20-A','Buenos Aires',NULL,'1010','Argentina');
 INSERT INTO orders VALUES (10959,'GOURL',6,'1998-03-18 00:00:00','1998-04-29 00:00:00','1998-03-23 00:00:00',2,'4.9800','Gourmet Lanchonetes','Av. Brasil, 442','Campinas','SP','04876-786','Brazil');
 INSERT INTO orders VALUES (10960,'HILAA',3,'1998-03-19 00:00:00','1998-04-02 00:00:00','1998-04-08 00:00:00',1,'2.0800','HILARI','Carrera 22 con Ave. Carlos Soublette #8-35','San Crist','T','5022','Venezuela');
 INSERT INTO orders VALUES (10961,'QUEEN',8,'1998-03-19 00:00:00','1998-04-16 00:00:00','1998-03-30 00:00:00',1,'104.4700','Queen Cozinha','Alameda dos Can','S','SP','05487-020','Brazil');
@@ -3100,13 +3096,13 @@ INSERT INTO orders VALUES (10982,'BOTTM',2,'1998-03-27 00:00:00','1998-04-24 00:
 INSERT INTO orders VALUES (10983,'SAVEA',2,'1998-03-27 00:00:00','1998-04-24 00:00:00','1998-04-06 00:00:00',2,'657.5400','Save-a-lot Markets','187 Suffolk Ln.','Boise','ID','83720','USA');
 INSERT INTO orders VALUES (10984,'SAVEA',1,'1998-03-30 00:00:00','1998-04-27 00:00:00','1998-04-03 00:00:00',3,'211.2200','Save-a-lot Markets','187 Suffolk Ln.','Boise','ID','83720','USA');
 INSERT INTO orders VALUES (10985,'HUNGO',2,'1998-03-30 00:00:00','1998-04-27 00:00:00','1998-04-02 00:00:00',1,'91.5100','Hungry Owl All-Night Grocers','8 Johnstown Road','Cork','Co. Cork',NULL,'Ireland');
-INSERT INTO orders VALUES (10986,'OCEAN',8,'1998-03-30 00:00:00','1998-04-27 00:00:00','1998-04-21 00:00:00',2,'217.8600','Oc','Ing. Gustavo Moncada 8585 Piso 20-A','Buenos Aires',NULL,'1010','Argentina');
+INSERT INTO orders VALUES (10986,'OCEAN',8,'1998-03-30 00:00:00','1998-04-27 00:00:00','1998-04-21 00:00:00',2,'217.8600','Oc','Ing. Gustavo Moncada 8585\r\nPiso 20-A','Buenos Aires',NULL,'1010','Argentina');
 INSERT INTO orders VALUES (10987,'EASTC',8,'1998-03-31 00:00:00','1998-04-28 00:00:00','1998-04-06 00:00:00',1,'185.4800','Eastern Connection','35 King George','London',NULL,'WX3 6FW','UK');
 INSERT INTO orders VALUES (10988,'RATTC',3,'1998-03-31 00:00:00','1998-04-28 00:00:00','1998-04-10 00:00:00',2,'61.1400','Rattlesnake Canyon Grocery','2817 Milton Dr.','Albuquerque','NM','87110','USA');
 INSERT INTO orders VALUES (10989,'QUEDE',2,'1998-03-31 00:00:00','1998-04-28 00:00:00','1998-04-02 00:00:00',1,'34.7600','Que Del','Rua da Panificadora, 12','Rio de Janeiro','RJ','02389-673','Brazil');
 INSERT INTO orders VALUES (10990,'ERNSH',2,'1998-04-01 00:00:00','1998-05-13 00:00:00','1998-04-07 00:00:00',3,'117.6100','Ernst Handel','Kirchgasse 6','Graz',NULL,'8010','Austria');
 INSERT INTO orders VALUES (10991,'QUICK',1,'1998-04-01 00:00:00','1998-04-29 00:00:00','1998-04-07 00:00:00',1,'38.5100','QUICK-Stop','Taucherstra','Cunewalde',NULL,'01307','Germany');
-INSERT INTO orders VALUES (10992,'THEBI',1,'1998-04-01 00:00:00','1998-04-29 00:00:00','1998-04-03 00:00:00',3,'4.2700','The Big Cheese','89 Jefferson Way Suite 2','Portland','OR','97201','USA');
+INSERT INTO orders VALUES (10992,'THEBI',1,'1998-04-01 00:00:00','1998-04-29 00:00:00','1998-04-03 00:00:00',3,'4.2700','The Big Cheese','89 Jefferson Way\r\nSuite 2','Portland','OR','97201','USA');
 INSERT INTO orders VALUES (10993,'FOLKO',7,'1998-04-01 00:00:00','1998-04-29 00:00:00','1998-04-10 00:00:00',3,'8.8100','Folk och f','','Br',NULL,'S-844 67','Sweden');
 INSERT INTO orders VALUES (10994,'VAFFE',2,'1998-04-02 00:00:00','1998-04-16 00:00:00','1998-04-09 00:00:00',3,'65.5300','Vaffeljernet','Smagsl','',NULL,'8200','Denmark');
 INSERT INTO orders VALUES (10995,'PERIC',1,'1998-04-02 00:00:00','1998-04-30 00:00:00','1998-04-06 00:00:00',3,'46.0000','Pericles Comidas cl','Calle Dr. Jorge Cash 321','M',NULL,'05033','Mexico');
@@ -3130,7 +3126,7 @@ INSERT INTO orders VALUES (11012,'FRANK',1,'1998-04-09 00:00:00','1998-04-23 00:
 INSERT INTO orders VALUES (11013,'ROMEY',2,'1998-04-09 00:00:00','1998-05-07 00:00:00','1998-04-10 00:00:00',1,'32.9900','Romero y tomillo','Gran V','Madrid',NULL,'28001','Spain');
 INSERT INTO orders VALUES (11014,'LINOD',2,'1998-04-10 00:00:00','1998-05-08 00:00:00','1998-04-15 00:00:00',3,'23.6000','LINO-Delicateses','Ave. 5 de Mayo Porlamar','I. de Margarita','Nueva Esparta','4980','Venezuela');
 INSERT INTO orders VALUES (11015,'SANTG',2,'1998-04-10 00:00:00','1998-04-24 00:00:00','1998-04-20 00:00:00',2,'4.6200','Sant','Erling Skakkes gate 78','Stavern',NULL,'4110','Norway');
-INSERT INTO orders VALUES (11016,'AROUT',9,'1998-04-10 00:00:00','1998-05-08 00:00:00','1998-04-13 00:00:00',2,'33.8000','Around the Horn','Brook Farm Stratford St. Mary','Colchester','Essex','CO7 6JX','UK');
+INSERT INTO orders VALUES (11016,'AROUT',9,'1998-04-10 00:00:00','1998-05-08 00:00:00','1998-04-13 00:00:00',2,'33.8000','Around the Horn','Brook Farm\r\nStratford St. Mary','Colchester','Essex','CO7 6JX','UK');
 INSERT INTO orders VALUES (11017,'ERNSH',9,'1998-04-13 00:00:00','1998-05-11 00:00:00','1998-04-20 00:00:00',2,'754.2600','Ernst Handel','Kirchgasse 6','Graz',NULL,'8010','Austria');
 INSERT INTO orders VALUES (11018,'LONEP',4,'1998-04-13 00:00:00','1998-05-11 00:00:00','1998-04-16 00:00:00',2,'11.6500','Lonesome Pine Restaurant','89 Chiaroscuro Rd.','Portland','OR','97219','USA');
 INSERT INTO orders VALUES (11019,'RANCH',6,'1998-04-13 00:00:00','1998-05-11 00:00:00',NULL,3,'3.1700','Rancho grande','Av. del Libertador 900','Buenos Aires',NULL,'1010','Argentina');
@@ -3171,7 +3167,7 @@ INSERT INTO orders VALUES (11053,'PICCO',2,'1998-04-27 00:00:00','1998-05-25 00:
 INSERT INTO orders VALUES (11054,'CACTU',8,'1998-04-28 00:00:00','1998-05-26 00:00:00',NULL,1,'0.3300','Cactus Comidas para llevar','Cerrito 333','Buenos Aires',NULL,'1010','Argentina');
 INSERT INTO orders VALUES (11055,'HILAA',7,'1998-04-28 00:00:00','1998-05-26 00:00:00','1998-05-05 00:00:00',2,'120.9200','HILARI','Carrera 22 con Ave. Carlos Soublette #8-35','San Crist','T','5022','Venezuela');
 INSERT INTO orders VALUES (11056,'EASTC',8,'1998-04-28 00:00:00','1998-05-12 00:00:00','1998-05-01 00:00:00',2,'278.9600','Eastern Connection','35 King George','London',NULL,'WX3 6FW','UK');
-INSERT INTO orders VALUES (11057,'NORTS',3,'1998-04-29 00:00:00','1998-05-27 00:00:00','1998-05-01 00:00:00',3,'4.1300','North/South','South House 300 Queensbridge','London',NULL,'SW7 1RZ','UK');
+INSERT INTO orders VALUES (11057,'NORTS',3,'1998-04-29 00:00:00','1998-05-27 00:00:00','1998-05-01 00:00:00',3,'4.1300','North/South','South House\r\n300 Queensbridge','London',NULL,'SW7 1RZ','UK');
 INSERT INTO orders VALUES (11058,'BLAUS',9,'1998-04-29 00:00:00','1998-05-27 00:00:00',NULL,3,'31.1400','Blauer See Delikatessen','Forsterstr. 57','Mannheim',NULL,'68306','Germany');
 INSERT INTO orders VALUES (11059,'RICAR',2,'1998-04-29 00:00:00','1998-06-10 00:00:00',NULL,2,'85.8000','Ricardo Adocicados','Av. Copacabana, 267','Rio de Janeiro','RJ','02389-890','Brazil');
 INSERT INTO orders VALUES (11060,'FRANS',2,'1998-04-30 00:00:00','1998-05-28 00:00:00','1998-05-04 00:00:00',2,'10.9800','Franchi S.p.A.','Via Monte Bianco 34','Torino',NULL,'10100','Italy');
@@ -3193,20 +3189,20 @@ INSERT INTO orders VALUES (11075,'RICSU',8,'1998-05-06 00:00:00','1998-06-03 00:
 INSERT INTO orders VALUES (11076,'BONAP',4,'1998-05-06 00:00:00','1998-06-03 00:00:00',NULL,2,'38.2800','Bon app''','12, rue des Bouchers','Marseille',NULL,'13008','France');
 INSERT INTO orders VALUES (11077,'RATTC',1,'1998-05-06 00:00:00','1998-06-03 00:00:00',NULL,2,'8.5300','Rattlesnake Canyon Grocery','2817 Milton Dr.','Albuquerque','NM','87110','USA');
 /*!40000 ALTER TABLE orders ENABLE KEYS */;
-/*!40101 SET @saved_cs_client = @@character_set_client */;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE products (
-ProductID int NOT NULL,
-ProductName varchar(40) NOT NULL,
-SupplierID int DEFAULT NULL,
-CategoryID int DEFAULT NULL,
-QuantityPerUnit varchar(20) DEFAULT NULL,
-UnitPrice decimal(19,4) DEFAULT '0.0000',
-UnitsInStock int DEFAULT '0',
-UnitsOnOrder int DEFAULT '0',
-ReorderLevel int DEFAULT '0',
-Discontinued int DEFAULT '0',
-PRIMARY KEY (ProductID)
+  ProductID int  NOT NULL,
+  ProductName varchar(40) NOT NULL,
+  SupplierID int  DEFAULT NULL,
+  CategoryID int  DEFAULT NULL,
+  QuantityPerUnit varchar(20) DEFAULT NULL,
+  UnitPrice decimal(19,4) DEFAULT '0.0000',
+  UnitsInStock int DEFAULT '0',
+  UnitsOnOrder int DEFAULT '0',
+  ReorderLevel int DEFAULT '0',
+  Discontinued int DEFAULT '0',
+  PRIMARY KEY (ProductID)
 );
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -3246,7 +3242,7 @@ INSERT INTO products VALUES (32,'Mascarpone Fabioli',14,4,'24 - 200 g pkgs.','32
 INSERT INTO products VALUES (33,'Geitost',15,4,'500 g','2.5000',112,0,20,0);
 INSERT INTO products VALUES (34,'Sasquatch Ale',16,1,'24 - 12 oz bottles','14.0000',111,0,15,0);
 INSERT INTO products VALUES (35,'Steeleye Stout',16,1,'24 - 12 oz bottles','18.0000',20,0,15,0);
-INSERT INTO products VALUES (36,'Inlagd Sill',17,8,'24 - 250 g jars','19.0000',112,0,20,0);
+INSERT INTO products VALUES (36,'Inlagd Sill',17,8,'24 - 250 g  jars','19.0000',112,0,20,0);
 INSERT INTO products VALUES (37,'Gravad lax',17,8,'12 - 500 g pkgs.','26.0000',11,50,25,0);
 INSERT INTO products VALUES (38,'C',18,1,'12 - 75 cl bottles','263.5000',17,0,15,0);
 INSERT INTO products VALUES (39,'Chartreuse verte',18,1,'750 cc per bottle','18.0000',69,0,5,0);
@@ -3289,13 +3285,13 @@ INSERT INTO products VALUES (75,'Rh',12,1,'24 - 0.5 l bottles','7.7500',125,0,25
 INSERT INTO products VALUES (76,'Lakkalik',23,1,'500 ml ','18.0000',57,0,20,0);
 INSERT INTO products VALUES (77,'Original Frankfurter gr',12,2,'12 boxes','13.0000',32,0,15,0);
 /*!40000 ALTER TABLE products ENABLE KEYS */;
-/*!40101 SET @saved_cs_client = @@character_set_client */;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE shippers (
-ShipperID int NOT NULL,
-CompanyName varchar(40) NOT NULL,
-Phone varchar(24) DEFAULT NULL,
-PRIMARY KEY (ShipperID)
+  ShipperID int  NOT NULL,
+  CompanyName varchar(40) NOT NULL,
+  Phone varchar(24) DEFAULT NULL,
+  PRIMARY KEY (ShipperID)
 );
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -3304,22 +3300,22 @@ INSERT INTO shippers VALUES (1,'Speedy Express','(503) 555-9831');
 INSERT INTO shippers VALUES (2,'United Package','(503) 555-3199');
 INSERT INTO shippers VALUES (3,'Federal Shipping','(503) 555-9931');
 /*!40000 ALTER TABLE shippers ENABLE KEYS */;
-/*!40101 SET @saved_cs_client = @@character_set_client */;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE suppliers (
-SupplierID int NOT NULL,
-CompanyName varchar(40) NOT NULL,
-ContactName varchar(30) DEFAULT NULL,
-ContactTitle varchar(30) DEFAULT NULL,
-Address varchar(60) DEFAULT NULL,
-City varchar(15) DEFAULT NULL,
-Region varchar(15) DEFAULT NULL,
-PostalCode varchar(10) DEFAULT NULL,
-Country varchar(15) DEFAULT NULL,
-Phone varchar(24) DEFAULT NULL,
-Fax varchar(24) DEFAULT NULL,
-HomePage text,
-PRIMARY KEY (SupplierID)
+  SupplierID int  NOT NULL,
+  CompanyName varchar(40) NOT NULL,
+  ContactName varchar(30) DEFAULT NULL,
+  ContactTitle varchar(30) DEFAULT NULL,
+  Address varchar(60) DEFAULT NULL,
+  City varchar(15) DEFAULT NULL,
+  Region varchar(15) DEFAULT NULL,
+  PostalCode varchar(10) DEFAULT NULL,
+  Country varchar(15) DEFAULT NULL,
+  Phone varchar(24) DEFAULT NULL,
+  Fax varchar(24) DEFAULT NULL,
+  HomePage text,
+  PRIMARY KEY (SupplierID)
 );
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -3327,10 +3323,10 @@ PRIMARY KEY (SupplierID)
 INSERT INTO suppliers VALUES (1,'Exotic Liquids','Charlotte Cooper','Purchasing Manager','49 Gilbert St.','London',NULL,'EC1 4SD','UK','(171) 555-2222',NULL,NULL);
 INSERT INTO suppliers VALUES (2,'New Orleans Cajun Delights','Shelley Burke','Order Administrator','P.O. Box 78934','New Orleans','LA','70117','USA','(100) 555-4822',NULL,NULL);
 INSERT INTO suppliers VALUES (3,'Grandma Kelly''s Homestead','Regina Murphy','Sales Representative','707 Oxford Rd.','Ann Arbor','MI','48104','USA','(313) 555-5735','(313) 555-3349',NULL);
-INSERT INTO suppliers VALUES (4,'Tokyo Traders','Yoshi Nagase','Marketing Manager','9-8 Sekimai Musashino-shi','Tokyo',NULL,'100','Japan','(03) 3555-5011',NULL,NULL);
+INSERT INTO suppliers VALUES (4,'Tokyo Traders','Yoshi Nagase','Marketing Manager','9-8 Sekimai\r\nMusashino-shi','Tokyo',NULL,'100','Japan','(03) 3555-5011',NULL,NULL);
 INSERT INTO suppliers VALUES (5,'Cooperativa de Quesos ''Las Cabras''','Antonio del Valle Saavedra ','Export Administrator','Calle del Rosal 4','Oviedo','Asturias','33007','Spain','(98) 598 76 54',NULL,NULL);
-INSERT INTO suppliers VALUES (6,'Mayumi''s','Mayumi Ohno','Marketing Representative','92 Setsuko Chuo-ku','Osaka',NULL,'545','Japan','(06) 431-7877',NULL,'Mayumi''s (on the World Wide Web)#http://www.microsoft.com/accessdev/sampleapps/mayumi.htm#');
-INSERT INTO suppliers VALUES (7,'Pavlova, Ltd.','Ian Devling','Marketing Manager','74 Rose St. Moonie Ponds','Melbourne','Victoria','3058','Australia','(03) 444-2343','(03) 444-6588',NULL);
+INSERT INTO suppliers VALUES (6,'Mayumi''s','Mayumi Ohno','Marketing Representative','92 Setsuko\r\nChuo-ku','Osaka',NULL,'545','Japan','(06) 431-7877',NULL,'Mayumi''s (on the World Wide Web)#http://www.microsoft.com/accessdev/sampleapps/mayumi.htm#');
+INSERT INTO suppliers VALUES (7,'Pavlova, Ltd.','Ian Devling','Marketing Manager','74 Rose St.\r\nMoonie Ponds','Melbourne','Victoria','3058','Australia','(03) 444-2343','(03) 444-6588',NULL);
 INSERT INTO suppliers VALUES (8,'Specialty Biscuits, Ltd.','Peter Wilson','Sales Representative','29 King''s Way','Manchester',NULL,'M14 GSD','UK','(161) 555-4448',NULL,NULL);
 INSERT INTO suppliers VALUES (9,'PB Kn','Lars Peterson','Sales Agent','Kaloadagatan 13','G',NULL,'S-345 67','Sweden ','031-987 65 43','031-987 65 91',NULL);
 INSERT INTO suppliers VALUES (10,'Refrescos Americanas LTDA','Carlos Diaz','Marketing Manager','Av. das Americanas 12.890','S',NULL,'5442','Brazil','(11) 555 4640',NULL,NULL);
@@ -3339,19 +3335,19 @@ INSERT INTO suppliers VALUES (12,'Plutzer Lebensmittelgro','Martin Bein','Intern
 INSERT INTO suppliers VALUES (13,'Nord-Ost-Fisch Handelsgesellschaft mbH','Sven Petersen','Coordinator Foreign Markets','Frahmredder 112a','Cuxhaven',NULL,'27478','Germany','(04721) 8713','(04721) 8714',NULL);
 INSERT INTO suppliers VALUES (14,'Formaggi Fortini s.r.l.','Elio Rossi','Sales Representative','Viale Dante, 75','Ravenna',NULL,'48100','Italy','(0544) 60323','(0544) 60603',NULL);
 INSERT INTO suppliers VALUES (15,'Norske Meierier','Beate Vileid','Marketing Manager','Hatlevegen 5','Sandvika',NULL,'1320','Norway','(0)2-953010',NULL,NULL);
-INSERT INTO suppliers VALUES (16,'Bigfoot Breweries','Cheryl Saylor','Regional Account Rep.','3400 - 8th Avenue Suite 210','Bend','OR','97101','USA','(503) 555-9931',NULL,NULL);
+INSERT INTO suppliers VALUES (16,'Bigfoot Breweries','Cheryl Saylor','Regional Account Rep.','3400 - 8th Avenue\r\nSuite 210','Bend','OR','97101','USA','(503) 555-9931',NULL,NULL);
 INSERT INTO suppliers VALUES (17,'Svensk Sj','Michael Bj','Sales Representative','Brovallav','Stockholm',NULL,'S-123 45','Sweden','08-123 45 67',NULL,NULL);
 INSERT INTO suppliers VALUES (18,'Aux joyeux eccl','Guyl','Sales Manager','203, Rue des Francs-Bourgeois','Paris',NULL,'75004','France','(1) 03.83.00.68','(1) 03.83.00.62',NULL);
-INSERT INTO suppliers VALUES (19,'New England Seafood Cannery','Robb Merchant','Wholesale Account Agent','Order Processing Dept. 2100 Paul Revere Blvd.','Boston','MA','02134','USA','(617) 555-3267','(617) 555-3389',NULL);
+INSERT INTO suppliers VALUES (19,'New England Seafood Cannery','Robb Merchant','Wholesale Account Agent','Order Processing Dept.\r\n2100 Paul Revere Blvd.','Boston','MA','02134','USA','(617) 555-3267','(617) 555-3389',NULL);
 INSERT INTO suppliers VALUES (20,'Leka Trading','Chandra Leka','Owner','471 Serangoon Loop, Suite #402','Singapore',NULL,'0512','Singapore','555-8787',NULL,NULL);
-INSERT INTO suppliers VALUES (21,'Lyngbysild','Niels Petersen','Sales Manager','Lyngbysild Fiskebakken 10','Lyngby',NULL,'2800','Denmark','43844108','43844115',NULL);
-INSERT INTO suppliers VALUES (22,'Zaanse Snoepfabriek','Dirk Luchte','Accounting Manager','Verkoop Rijnweg 22','Zaandam',NULL,'9999 ZZ','Netherlands','(12345) 1212','(12345) 1210',NULL);
+INSERT INTO suppliers VALUES (21,'Lyngbysild','Niels Petersen','Sales Manager','Lyngbysild\r\nFiskebakken 10','Lyngby',NULL,'2800','Denmark','43844108','43844115',NULL);
+INSERT INTO suppliers VALUES (22,'Zaanse Snoepfabriek','Dirk Luchte','Accounting Manager','Verkoop\r\nRijnweg 22','Zaandam',NULL,'9999 ZZ','Netherlands','(12345) 1212','(12345) 1210',NULL);
 INSERT INTO suppliers VALUES (23,'Karkki Oy','Anne Heikkonen','Product Manager','Valtakatu 12','Lappeenranta',NULL,'53120','Finland','(953) 10956',NULL,NULL);
-INSERT INTO suppliers VALUES (24,'G''day, Mate','Wendy Mackenzie','Sales Representative','170 Prince Edward Parade Hunter''s Hill','Sydney','NSW','2042','Australia','(02) 555-5914','(02) 555-4873','G''day Mate (on the World Wide Web)#http://www.microsoft.com/accessdev/sampleapps/gdaymate.htm#');
+INSERT INTO suppliers VALUES (24,'G''day, Mate','Wendy Mackenzie','Sales Representative','170 Prince Edward Parade\r\nHunter''s Hill','Sydney','NSW','2042','Australia','(02) 555-5914','(02) 555-4873','G''day Mate (on the World Wide Web)#http://www.microsoft.com/accessdev/sampleapps/gdaymate.htm#');
 INSERT INTO suppliers VALUES (25,'Ma Maison','Jean-Guy Lauzon','Marketing Manager','2960 Rue St. Laurent','Montr','Qu','H1J 1C3','Canada','(514) 555-9022',NULL,NULL);
 INSERT INTO suppliers VALUES (26,'Pasta Buttini s.r.l.','Giovanni Giudici','Order Administrator','Via dei Gelsomini, 153','Salerno',NULL,'84100','Italy','(089) 6547665','(089) 6547667',NULL);
 INSERT INTO suppliers VALUES (27,'Escargots Nouveaux','Marie Delamare','Sales Manager','22, rue H. Voiron','Montceau',NULL,'71300','France','85.57.00.07',NULL,NULL);
-INSERT INTO suppliers VALUES (28,'Gai p','Eliane Noz','Sales Representative','Bat. B 3, rue des Alpes','Annecy',NULL,'74000','France','38.76.98.06','38.76.98.58',NULL);
+INSERT INTO suppliers VALUES (28,'Gai p','Eliane Noz','Sales Representative','Bat. B\r\n3, rue des Alpes','Annecy',NULL,'74000','France','38.76.98.06','38.76.98.58',NULL);
 INSERT INTO suppliers VALUES (29,'For','Chantal Goulet','Accounting Manager','148 rue Chasseur','Ste-Hyacinthe','Qu','J2S 7S8','Canada','(514) 555-2955','(514) 555-2921',NULL);
 /*!40000 ALTER TABLE suppliers ENABLE KEYS */;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -3361,54 +3357,3 @@ INSERT INTO suppliers VALUES (29,'For','Chantal Goulet','Accounting Manager','14
 /*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
-// This is an custom addition for this document
-CREATE TABLE customer_applications
-(
-CustomerID varchar(5),
-CompanyName varchar(40),
-ContactName varchar(30),
-ContactTitle varchar(30),
-[Address] varchar(60),
-City varchar(15),
-Region varchar(15),
-PostalCode varchar(10),
-Country varchar(15),
-Phone varchar(24),
-Fax varchar(24)
-);
-INSERT INTO customer_applications
-VALUES
-// This is an custom addition for this document
-CREATE TABLE customer_applications
-(
-CustomerID varchar(5),
-CompanyName varchar(40),
-ContactName varchar(30),
-ContactTitle varchar(30),
-[Address] varchar(60),
-City varchar(15),
-Region varchar(15),
-PostalCode varchar(10),
-Country varchar(15),
-Phone varchar(24),
-Fax varchar(24)
-);
-INSERT INTO customer_applications
-VALUES
-('ANT1N', 'Antonioson Moreno Taquer', 'Antonio Morenoreno', 'Owner', 'Mataderos 2312', 'M', NULL, '5023', 'Mexico', '(5) 555-3932', NULL),
-('CACT1', 'Cactus Comidas para llevars', 'Patrick Simpson', 'Sales Agent', 'Cerrito 333', 'Buenos Aires', NULL, '1010', 'Argentina', '(1) 135-5555', '(1) 135-4892'),
-('D1MON', 'Du mondelero entier', 'Jan Labrune', 'Owner', '67, rue des Cinquante Otages', 'Nantes', NULL, '44000', 'France', '40.67.88.88', '40.67.89.89'),
-('F1LKO', 'Folk och fokkerin', 'Maria Ulricj', 'Owner', '', 'Br', NULL, 'S-844 67', 'Sweden', '0695-34 67 21', NULL),
-('G1DOS', 'Godos Cocina Tamala', 'Jos Groban', 'Sales Manager', 'C/ Romero, 33', 'Sevilla', NULL, '41101', 'Spain', '(95) 555 82 82', NULL),
-('H1NGC', 'Hungrier Hound Import Store', 'Josh Latimer', 'Sales Representative', 'City Center Plaza 516 Main St.', 'Elgin', 'OR', '97827', 'USA', '(503) 555-6874', '(503) 555-2376'),
-('L1UGB', 'Laughing Succubus Wine Cellars', 'Josh Tannamuri', 'Marketing Assistant', '1900 Oak St.', 'Vancouver', 'BC', 'V3F 2K1', 'Canada', '(604) 555-3392', '(604) 555-7293'),
-('LON1P', 'Lonehill Pine Restaurant', 'Francine Wilson', 'Sales Manager', '89 Chiaroscuro Rd.', 'Portland', 'OR', '97219', 'USA', '(503) 555-9573', '(503) 555-9646'),
-('OC1AN', 'Ocposie', 'Yvonne Chaka Chaka', 'Sales Agent', 'Ing. Gustavo Moncada 8585 Piso 20-A', 'Buenos Aires', NULL, '1010', 'Argentina', '(1) 135-5333', '(1) 135-5535'),
-('PRIN1', 'Princesa Isabel Vinhosomo', 'Isabel denel', 'Sales Representative', 'Estrada da sa', 'Lisboa', NULL, '1756', 'Portugal', '(1) 356-5634', NULL),
-('R1GGC', 'Reggiani Caseificimii', 'Morne Moroni', 'Sales Associate', 'Strada Provinciale 124', 'Reggio Emilia', NULL, '42100', 'Italy', '0522-556721', '0522-556722'),
-('SE1ES', 'Even Seven Seas Imports', 'Peter Kumar', 'Sales Manager', '90 Wadhurst Rd.', 'London', NULL, 'OX15 4NB', 'UK', '(171) 555-1717', '(171) 555-5646'),
-('T1ECR', 'The Crack Box', 'Liu Ka', 'Marketing Assistant', '55 Grizzly Peak Rd.', 'Butte', 'MT', '59801', 'USA', '(406) 555-5834', '(406) 555-8083'),
-('VI1TE', 'What the Victuailles en stock', 'Mary Saveme', 'Sales Agent', '2, rue du Commerce', 'Lyon', NULL, '69004', 'France', '78.32.54.86', '78.32.54.87'),
-('W1LMK', 'Wilman Kalalapappa', 'Mathew Karttunen', 'Owner/Marketing Assistant', 'Keskuskatu 45', 'Helsinki', NULL, '21240', 'Finland', '90-224 8858', '90-224 
-8858');
-```

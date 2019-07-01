@@ -1,6 +1,6 @@
 # Serverless Express API Zeit Cloud
 
-### Current Independant API:
+## Current Independent API
 
 * **Date API:**
 
@@ -10,7 +10,7 @@
 
   This service is serving the DOCZ version of my MS SQL Tech doc which is still a work in progress.
   
-* ##### Stream video serverless from other locations
+* ### Stream video serverless from other locations
 
   - call stream1 in query brings airport background video
 
@@ -18,7 +18,7 @@
 
 ## TODO:
 
-#### For circling back to :
+### For circling back to :
 
 1. Experiment with serverless user authentication according to this instruction:
 
