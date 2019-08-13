@@ -9,10 +9,7 @@
             "src": "www/**/*",
             "use": "@now/static"
         },
-        {
-            "src": "assets/files/**/*",
-            "use": "@now/static"
-        },
+
         {
             "src": "api/**/*.js",
             "use": "@now/node"
