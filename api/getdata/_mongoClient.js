@@ -3,7 +3,7 @@ let url = require('url');
 const MongoClient = require('mongodb').MongoClient;
 // Create cached connection variable
 let cachedDb = null;
-let connectionString = "mongodb+srv://digitDataReader:EjUt8APEG1w2Wejj@cluster0-wzhlb.mongodb.net/digitSiteData?retryWrites=true&w=majority"
+let connectionString = "####"
 const legacyModifiers = { useUnifiedTopology: true,useNewUrlParser: true  };
 // A function for connecting to MongoDB,
 // taking a single para-mater of the connection string
