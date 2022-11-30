@@ -8,8 +8,8 @@
     },
     "dependencies": {
         "express": "^4.16.4",
-        "helmet": "^3.21.1",
-        "moment": "^2.24.0"
+        "helmet": "^3.18.0",
+        "moment": "^2.29.2"
     },
     "author": "Cliff Crerar",
     "license": "MIT"
