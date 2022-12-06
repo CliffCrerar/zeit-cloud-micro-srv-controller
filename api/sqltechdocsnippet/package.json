@@ -9,7 +9,7 @@
     "dependencies": {
         "express": "^4.17.1",
         "helmet": "^3.18.0",
-        "moment": "^2.29.2"
+        "moment": "^2.29.4"
     },
     "keywords": [
         "get",
