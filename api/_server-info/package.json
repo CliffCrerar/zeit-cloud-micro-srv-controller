@@ -11,7 +11,7 @@
         "api"
     ],
     "dependencies": {
-        "express": "^4.17.3",
+        "express": "^4.19.2",
         "helmet": "^3.21.1",
         "moment": "^2.24.0"
     },
